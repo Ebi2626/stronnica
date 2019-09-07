@@ -26,17 +26,17 @@
         <div class="mainHeader__box">
             <p class="mainHeader__smallText">Cała potęga wiedzy</p>
             <h3 class="mainHeader__title">Tania literatura. <br /> Bezcenna wiedza.</h3>
-            <p class="mainHeader__text">Wierzymy, że to właśnie wiedza jest tym, co pozwoliło człowiekowi wyewoluować i przetrwać tyle setek tysięcy lat. Dzisiaj, w cywyilizacji wysokich technologii wiedza jest podstawowym fundamentem nie tylko sukcesu życiowego, ale w ogóle skutecznego funkcjonowania. Dzięki wiedzy zawartej w książkach naszej księgarni każdy człowiek może opanować najbardziej skomplikowane mechanizmy i czuć się w naszej cyfrowej rzeczywistości, jak ryba w wodzie.</p>
+            <p class="mainHeader__text">Wierzymy, że to właśnie wiedza jest tym, co pozwoliło człowiekowi wyewoluować i przetrwać tyle setek tysięcy lat. Dzisiaj, w cywilizacji wysokich technologii wiedza jest podstawowym fundamentem nie tylko sukcesu życiowego, ale w ogóle skutecznego funkcjonowania. Dzięki wiedzy zawartej w książkach naszej księgarni każdy człowiek może opanować najbardziej skomplikowane mechanizmy i czuć się w naszej cyfrowej rzeczywistości, jak ryba w wodzie.</p>
         </div>
     </header>
-    <div class="category">
+    <nav class="category">
         <ul class="category__list">
             <li class="category__item"><a href="" class="category__link">Informatyka</a></li>
             <li class="category__item"><a href="" class="category__link">Matematyka</a></li>
             <li class="category__item"><a href="" class="category__link">Fizyka</a></li>
             <li class="category__item"><a href="" class="category__link">Inżynieria</a></li>
         </ul>
-    </div>
+    </nav>
     <section class="it">
         <div class="header">
             <div class="titleBox">
@@ -48,15 +48,15 @@
             </div>
         </div>
         <div class="content">
-            <div class="contentHeader">
-                <h5 class="contentTitle">Informatyka</h5>
-                <p class="contentText">Podręczniki od 29,99zł</p>
+            <div class="content__header">
+                <h5 class="content__title">Informatyka</h5>
+                <p class="content__text">Podręczniki od 29,99zł</p>
             </div>
-            <div class="contentBox">
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
+            <div class="content__box">
+                <div class="content__items"></div>
+                <div class="content__items"></div>
+                <div class="content__items"></div>
+                <div class="content__items"></div>
             </div>
         </div>
     </section>
@@ -71,15 +71,15 @@
             </div>
         </div>
         <div class="content">
-            <div class="contentHeader">
-                <h5 class="contentTitle">Matematyka</h5>
-                <p class="contentText">Podręczniki od 19,99zł</p>
+            <div class="content__header">
+                <h5 class="content__title">Matematyka</h5>
+                <p class="content__text">Podręczniki od 19,99zł</p>
             </div>
-            <div class="contentBox">
-            <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
+            <div class="content__box">
+            <div class="content__items"></div>
+                <div class="content__items"></div>
+                <div class="content__items"></div>
+                <div class="content__items"></div>
             </div>
         </div>
     </section>
@@ -94,15 +94,15 @@
             </div>
         </div>
         <div class="content">
-            <div class="contentHeader">
-                <h5 class="contentTitle">Fizyka</h5>
-                <p class="contentText">Podręczniki od 25,99zł</p>
+            <div class="content__header">
+                <h5 class="content__title">Fizyka</h5>
+                <p class="content__text">Podręczniki od 25,99zł</p>
             </div>
-            <div class="contentBox">
-            <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
+            <div class="content__box">
+            <div class="content__items"></div>
+<div class="content__items"><h2>ksiazka</h2><div style="background-color:black; width: 100px; height: 150px;"></div></div>
+                <div class="content__items"></div>
+                <div class="content__items"></div>
             </div>
         </div>
     </section>
@@ -117,15 +117,15 @@
             </div>
         </div>
         <div class="content">
-            <div class="contentHeader">
-                <h5 class="contentTitle">Inżynieria</h5>
-                <p class="contentText">Podręczniki od 49,99zł</p>
+            <div class="content__header">
+                <h5 class="content__title">Inżynieria</h5>
+                <p class="content__text">Podręczniki od 49,99zł</p>
             </div>
-            <div class="contentBox">
-            <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
-                <div class="content__items" style="backround-color: rgba(0, 0, 0, .5);"></div>
+            <div class="content__box">
+            <div class="content__items"></div>
+                <div class="content__items"></div>
+                <div class="content__items"></div>
+                <div class="content__items"></div>
             </div>
         </div>
     </section>
@@ -158,9 +158,8 @@
             <p class="newsletter__subtitle">Bądź na bieżąco z najnowszymi dokonaniami naukowymi i promocjami.</p>
         </div>
         <form class="newsletter__saver">
-            <p class="newsletter__saverText">Wpisz swój adres email poniżej</p>
-            <input type="text" class="newsletter__input" placeholder="Twój email">
-            <input type="submit" class="newsletter__input" value="Wyślij">
+            <input type="text" name="mail" class="newsletter__input" placeholder="Twój email">
+            <input type="submit" class="newsletter__submit">
         </form>
     </div>
     <footer class="footer">
