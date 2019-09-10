@@ -506,10 +506,13 @@ h1,h2,h3,h4,h5,h6 {
         align-items: center;
     }
 }
-
-
 // Media queries
 @media all and (max-width: 767px) {
+    .contact {
+            &__list{
+            padding-left: 0px;
+        }
+    }
     .menu {
         &__left {
             .hamburger {
@@ -567,6 +570,7 @@ h1,h2,h3,h4,h5,h6 {
             z-index: 2;
             font-size: 18px;
             color: rgb(58, 58, 58);
+            transition: all 3s ease-in-out;
         }
     }
 }
@@ -665,7 +669,7 @@ h1,h2,h3,h4,h5,h6 {
                 content: "";
                 width: 0;
                 height: 0;
-                top: -50px;
+                top: -52px;
                 margin: 0px;  
                 z-index: -1;    
                 left: 0px;
@@ -682,6 +686,9 @@ h1,h2,h3,h4,h5,h6 {
             }
             .buttonContent {
                 background-color: rgb(162, 235, 240);
+                &:hover {
+                    color: rgb(36, 217, 230);
+                }
         }
         }
     }
@@ -696,7 +703,7 @@ h1,h2,h3,h4,h5,h6 {
                 content: "";
                 width: 0;
                 height: 0;
-                top: -60px;
+                top: -62px;
                 margin: 0px;  
                 z-index: -1;    
                 right: 0px;
@@ -712,6 +719,9 @@ h1,h2,h3,h4,h5,h6 {
             }
             .buttonContent {
                 background-color: rgb(162, 187, 240);
+                &:hover {
+                    color: rgb(39, 99, 230);
+                }
 
             }
         }
@@ -727,7 +737,7 @@ h1,h2,h3,h4,h5,h6 {
                 content: "";
                 width: 0;
                 height: 0;
-                top: -60px;
+                top: -62px;
                 margin: 0px;  
                 z-index: -1;    
                 left: 0px;
@@ -744,6 +754,9 @@ h1,h2,h3,h4,h5,h6 {
             }
             .buttonContent {
                 background-color: rgb(196, 162, 240);
+                &:hover {
+                    color: rgb(120, 36, 230);
+                }
             }
         }
         }
@@ -758,7 +771,7 @@ h1,h2,h3,h4,h5,h6 {
                 content: "";
                 width: 0;
                 height: 0;
-                top: -50px;
+                top: -52px;
                 margin: 0px;  
                 z-index: -1;    
                 right: 0px;
@@ -774,6 +787,9 @@ h1,h2,h3,h4,h5,h6 {
             }
             .buttonContent {
                 background-color: rgb(240, 222, 162);
+                &:hover {
+                    color: rgb(230, 186, 42);
+                }
             }
         }
         }
@@ -818,6 +834,12 @@ h1,h2,h3,h4,h5,h6 {
                     z-index: 2;
                     font-size: 18px;
                     color: rgb(90, 88, 88);
+                    transition: all .5s ease-in-out;
+                    &:hover {
+                        background-color: whitesmoke;
+                        transform: scale(1.1);
+                        box-shadow: 0px 0px 7px 1px rgb(56, 56, 56);
+                    }
                 }
 
             }
