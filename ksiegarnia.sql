@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 06 Wrz 2019, 15:27
--- Wersja serwera: 10.4.6-MariaDB
--- Wersja PHP: 7.3.9
+-- Czas generowania: 22 Wrz 2019, 21:57
+-- Wersja serwera: 10.1.37-MariaDB
+-- Wersja PHP: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,24 +45,26 @@ CREATE TABLE `klienci` (
   `imie` text COLLATE utf8_polish_ci NOT NULL,
   `nazwisko` text COLLATE utf8_polish_ci NOT NULL,
   `miejscowosc` text COLLATE utf8_polish_ci NOT NULL,
-  `email` text COLLATE utf8_polish_ci NOT NULL
+  `email` text COLLATE utf8_polish_ci NOT NULL,
+  `haslo` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `klienci`
 --
 
-INSERT INTO `klienci` (`idklienta`, `imie`, `nazwisko`, `miejscowosc`, `email`) VALUES
-(1, 'Łukasz', 'Lewandowski', 'Poznań', 'luki@email.pl'),
-(2, 'Jan', 'Nowak', 'Katowice', 'jn@email.pl'),
-(3, 'Maciej', 'Wójcik', 'Bydgoszcz', 'maciejo22@email.pl'),
-(4, 'Agnieszka', 'Psikuta', 'Lublin', 'apsia@email.pl'),
-(5, 'Tomasz', 'Mazur', 'Jelenia Góra', 'mazur87@email.pl'),
-(6, 'Michał', 'Zieliński', 'Kraków', 'zielu34@email.pl'),
-(7, 'Artur', 'Rutkowski', 'Kielce', 'det.ew@email.pl'),
-(8, 'Mateusz', 'Skorupa', 'Gdańsk', 'zolw3342@email.pl'),
-(9, 'Jerzy', 'Rutkowski', 'Rybnik', 'juro88@email.pl'),
-(10, 'Joanna', 'Dostojewska', 'Pułtusk', 'karenina@email.pl');
+INSERT INTO `klienci` (`idklienta`, `imie`, `nazwisko`, `miejscowosc`, `email`, `haslo`) VALUES
+(1, 'Łukasz', 'Lewandowski', 'Poznań', 'luki@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(2, 'Jan', 'Nowak', 'Katowice', 'jn@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(3, 'Maciej', 'Wójcik', 'Bydgoszcz', 'maciejo22@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(4, 'Agnieszka', 'Psikuta', 'Lublin', 'apsia@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(5, 'Edwin', 'Harmata', 'Kraków', 'edwin.harmata@gmail.com', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(6, 'Michał', 'Zieliński', 'Kraków', 'zielu34@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(7, 'Artur', 'Rutkowski', 'Kielce', 'det.ew@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(8, 'Mateusz', 'Skorupa', 'Gdańsk', 'zolw3342@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(9, 'Jerzy', 'Rutkowski', 'Rybnik', 'juro88@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(10, 'Joanna', 'Dostojewska', 'Pułtusk', 'karenina@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
+(11, 'Lola', 'Kola', 'KrakÃ³w', 'lola@patola.pl', '$2y$10$RuGQaUkyLGphxXEpTvCpvO89xouo6Jq5tBgTds/Ndo5LQI6G5Nl/K');
 
 -- --------------------------------------------------------
 
@@ -165,7 +167,7 @@ ALTER TABLE `avatary`
 -- AUTO_INCREMENT dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
-  MODIFY `idklienta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idklienta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `ksiazki`

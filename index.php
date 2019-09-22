@@ -1,39 +1,28 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Stronnica - księgarnia internetowa</title>
-    <meta name="description" content="Stronnica to pierwsza w Polsce księgarnia internetowa z możliwością...">
-    <link rel="stylesheet" href="style.bundle.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<?php
+require('head.php');
+?>
+<link rel="stylesheet" href="./dist/<?php
+
+$filename = basename(__FILE__);
+echo substr($filename, 0, -4);
+
+?>.bundle.css" />
+<title>Stronnica - Twoja Księgarnia Internetowa</title>
 </head>
 <body>
 <header class="mainHeader">
-    <nav class="menu" id="menu">
-        <ul class="menu__left">
-            <li class="hamburger"><div class="hamburger__menu" id="hamburger"></div>
-                <ul class="submenu" id="submenu">
-                    <li class="submenu__item"><a href="#" class="submenu__link">Ksiązki</a></li></li>
-                    <li class="submenu__item"><a href="#" class="submenu__link">Autorzy</a></li>
-                    <li class="submenu__item"><a href="#" class="submenu__link">Kategorie</a></li>
-                    <li class="submenu__item"><a href="#" class="submenu__link">Zaloguj się</a></li>
-                    <li class="submenu__item"><a href="#" class="submenu__link">Zarejestruj się</a></li>
-                </ul>
-            </li>
-            <li class="menu__item"><a href="" class="menu__link">Ksiązki</a></li>
-            <li class="menu__item"><a href="" class="menu__link">Autorzy</a></li>
-            <li class="menu__item"><a href="" class="menu__link">Kategorie</a></li>
-        </ul>
-        <a href="#"><div class="menu__logo"><p class="logo__text">stronnica</p><img src="./img/logo.svg" alt="logo" id="logo" class="logo__img"></div></a>
-        <ul class="menu__right">
-            <li class="menu__item"><a href="" class="menu__link">Zaloguj się</a></li>
-            <li class="menu__item"><a href="" class="menu__link">Zarejestruj się</a></li>
-            <li class="menu__item"><a href="" class="menu__link"><i class="fa fa-shopping-basket" style="font-size: 24px;"></i></i></a></li>
-        </ul>
-    </nav>
+    <?php 
+    include("nav.php");
+    ?>
         <div class="mainHeader__box" id="mainHeader__box">
+            <?php 
+            if (isset($_SESSION['pass'])){
+                if ($_SESSION['refreshing'] < 1){
+                echo "<p class='slide slide--active'>Zalogowano pomyślnie</p>";
+                $_SESSION['refreshing']++;
+                };
+            };
+            ?>
             <p class="mainHeader__smallText">Cała potęga wiedzy</p>
             <h3 class="mainHeader__title">Tania literatura. <br /> Bezcenna wiedza.</h3>
             <p class="mainHeader__text">Wierzymy, że to właśnie wiedza jest tym, co pozwoliło człowiekowi wyewoluować i przetrwać tyle setek tysięcy lat. Dzisiaj, w cywilizacji wysokich technologii wiedza jest podstawowym fundamentem nie tylko sukcesu życiowego, ale w ogóle skutecznego funkcjonowania. Dzięki wiedzy zawartej w książkach naszej księgarni każdy człowiek może opanować najbardziej skomplikowane mechanizmy i czuć się w naszej cyfrowej rzeczywistości, jak ryba w wodzie.</p>
@@ -141,10 +130,10 @@
     </section>
     <div class="banner" id="banner">
         <div class="banner__content">
-            <img src="./img/ml.jpg" alt="matematyka" class="banner__img">
-            <img src="./img/el.jpg" alt="inżynieria" class="banner__img">
-            <img src="./img/il.jpg" alt="informatyka" class="banner__img">
-            <img src="./img/fl.jpg" alt="fizyka" class="banner__img">
+            <img src="./src/img/ml.jpg" alt="matematyka" class="banner__img">
+            <img src="./src/img/el.jpg" alt="inżynieria" class="banner__img">
+            <img src="./src/img/il.jpg" alt="informatyka" class="banner__img">
+            <img src="./src/img/fl.jpg" alt="fizyka" class="banner__img">
         </div>
         <div class="banner__content">
             <div class="banner__header">
@@ -156,10 +145,10 @@
             </div>
          </div>
         <div class="banner__content">
-        <img src="./img/mr.jpg" alt="matematyka" class="banner__img">
-            <img src="./img/er.jpg" alt="inżynieria" class="banner__img">
-            <img src="./img/ir.jpg" alt="informatyka" class="banner__img">
-            <img src="./img/fr.png" alt="fizyka" class="banner__img">
+        <img src="./src/img/mr.jpg" alt="matematyka" class="banner__img">
+            <img src="./src/img/er.jpg" alt="inżynieria" class="banner__img">
+            <img src="./src/img/ir.jpg" alt="informatyka" class="banner__img">
+            <img src="./src/img/fr.png" alt="fizyka" class="banner__img">
         </div>
     </div>
     <div class="newsletter">
@@ -172,35 +161,13 @@
             <input type="submit" class="newsletter__submit">
         </form>
     </div>
-    <footer class="footer">
-        <div class="footer__logo"><img src="./img/logo.svg" alt="" class="footer__img"></div>
-        <div class="footer__content">
-            <ul class="footer__list">
-                <li class="footer__listHeader">Książki</li>
-                <li class="footer__link"><a href="#it">Informatyka</a></li>
-                <li class="footer__link"><a href="#math">Matematyka</a></li>
-                <li class="footer__link"><a href="#physic">Fizyka</a></li>
-                <li class="footer__link"><a href="#enginering">Inżynieria</a></li>
-            </ul>
-            <ul class="footer__list">
-                <li class="footer__listHeader">O nas</li>
-                <li class="footer__text"><p class="footer__paragraph">Naszą misją jest szerzenie nowoczensej wiedzy w świecie zaawansowanych technologii w sposób przystępny dla każdego. Chcemy umożliwić ludziom zrozumienie urządzeń użytku codziennego, które ułatwiają nam życie na każdym kroku.</p>
-                </li>
-            </ul>
-            <ul class="footer__list">
-                <li class="footer__listHeader">Kontakt</li>
-                <li class="footer__link">E-mail: <a href="mailto:biuro@stronnica.pl">biuro@stronnica.pl</a></li>
-                <li class="footer__link">Tel: <a href="tel:+48999999999">999 999 999</a></li>
-                <li class="footer__link">Kraków, <a href="https://goo.gl/maps/qFjVQHsFRgXbaQNs8"> ul. Głowackiego</a></li>
-            </ul>
-        </div>
-    </footer>
-    <div class="contact">
-        <ul class="contact__list">
-            <li class="contact__item">2019, Stronnica.</li>
-            <li class="contact__item">Polityka prywatności</li>
-        </ul>
-    </div>
-<script src="main.bundle.js"></script>
+    <?php
+
+require("footer.php")
+
+?>
+  <script src="./dist/<?php
+    $filename = basename(__FILE__);
+    echo substr($filename, 0, -4);
+    ?>.bundle.js"></script>
 </body>
-</html>

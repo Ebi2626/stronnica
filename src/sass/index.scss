@@ -1,0 +1,567 @@
+.mainHeader {
+    position: relative;
+    background-image: url("../src/img/books_small.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    background-color: rgba(100,100,100, .9);
+    background-blend-mode: lighten;
+    min-height: calc(80vh - 100px);
+    max-height: 800px;
+    &__box {
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    &__smallText {
+        color: rgb(209, 44, 44);
+        margin-bottom: 20px;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    &__title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    &__text {
+        color: white;
+        text-shadow: 0px 0px 5px black;
+        padding: 5px;
+        line-height: 24px;
+        font-size: 18px;
+    }
+}
+.menu--sticky {
+    position: fixed !important;
+}
+.it, .math, .physics, .enginering {
+    position: relative;
+    .header {
+        position: relative;
+        display: flex;
+        background-image: none;
+        height: 400px;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        }
+        .content {
+            min-height: 100px;
+            width: 100vw;
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            &__header {
+                display: flex;
+                flex-direction: column;
+                height: 100px;
+                align-items: center;
+                text-align: center;
+                justify-content: space-around;
+                .content__title {
+                    font-size: 26px;
+                    text-align: center;
+                    font-weight: normal;
+                }
+                .content__text {
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+            &__box {
+                position: relative;
+                width: 100vw;
+                display: grid;
+                grid-template-columns: 1fr;
+                column-gap: 10px;
+                row-gap: 10px;
+                margin-bottom: 10px;
+                .content__items {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    text-align: center;
+                    padding: 20px;
+                    height: 300px;
+                    background-color: rgb(209, 209, 209);
+                }
+            }
+
+        }
+    }
+
+.category {
+    display: none;
+}
+.banner {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    background-color: white;
+    width: 100%;
+    &__header {
+        display: flex;
+        flex-direction: column;
+    }
+    &__subtitle {
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+        color: rgb(105, 22, 22);
+    }
+    &__title {
+        font-size: 32px;
+        color:rgb(2, 3, 88);
+        margin-bottom: 20px;
+    }
+    &__button {
+        align-self: center;
+        width: 200px;
+        padding: 10px;
+        border: solid 1px rgb(150,150,150);
+        transition: all .2s ease-in-out;
+        a {
+            color: grey;
+        }
+        &:hover {
+         background-color: rgb(18, 41, 71); 
+         a {
+            color: white;
+         }
+        }
+    }
+    &__content:nth-child(2) {
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    &__content:nth-child(1), &__content:nth-child(3) {
+        display: none;
+    }
+}
+.newsletter {
+    background-color: rgb(18, 41, 71);
+    height: 300px;
+    display: flex;
+    padding: 10px 2vw;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__header {
+        width: 90%;
+        margin-bottom: 20px;
+       .newsletter__title, .newsletter__subtitle {
+           color: white;
+           margin-bottom: 20px;
+       }
+       .newsletter__title {
+           font-size: 18px;
+       }
+       .newsletter__subtitle {
+           font-size: 14px;
+       }
+    }
+    &__saver {
+        position: relative;
+        width: 90%;
+        .newsletter__input {
+            position: relative;
+            width: 80%;
+            border: none;
+            border-bottom: solid 1px rgb(185, 185, 185);
+            background-color: transparent;
+            &[placeholder]{
+                color: rgb(185, 185, 185);
+            }
+        }
+        .newsletter__submit {
+            position: relative;
+            left: 10px;
+            top: 5px;
+            background-color: transparent;
+            border: none;
+            width: 0px;
+            height: 0px;
+            border-top: 4px solid transparent;
+            border-left: 17px solid #fff;
+            border-bottom: 4px solid transparent;
+            &:before {
+                position: absolute;
+                top: 5px;
+                left: 2px;
+                content: "";
+                height: 1px;
+                width: 10px;
+                background-color: white !important;
+            }
+        }        
+    }
+}
+
+@media all and (max-width: 767px) {
+    .it {
+        .header {
+            background-color: rgb(162, 235, 240);
+        }
+    }
+    .math {
+        .header {
+            background-color: rgb(162, 187, 240);
+        }
+    }
+    .physics {
+        .header {
+            background-color: rgb(196, 162, 240);
+        }
+    }
+    .enginering {
+        .header {
+            background-color: rgb(240, 222, 162);
+        }
+    }
+    .it, .math, .physics, .enginering {
+        .header {
+    .titleBox {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 60%;
+        max-width: 90%;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        .title {
+            font-size: 26px;
+            z-index: 2;
+        }
+        .subtitle {
+            font-size: 18px;
+            z-index: 2;
+        }
+        .buttonContent {
+            align-self: center;
+            text-align: center;
+            width: 250px;
+            padding: 10px;
+            border: solid 1px rgb(4, 63, 97);
+            z-index: 2;
+            font-size: 18px;
+            color: rgb(58, 58, 58);
+            transition: all 3s ease-in-out;
+        }
+    }
+}
+    }
+}
+@media all and (min-width: 768px) {
+
+    
+    .mainHeader {
+        padding: 0px;
+        background-image: url("../src/img/books_medium.jpg");
+        &__box {
+            position: relative;
+            left: 5vw;
+            padding: 30px;
+            width: 600px;
+            text-align: left;
+        }
+    }
+    .category {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 50px;
+        align-items: center;
+        transition: all .5s ease-in-out;
+        &__item {
+            padding: 12px 0 12px 0;
+            transition: all .2s ease-in-out;
+            text-align: center;
+            width: 120px;
+            &:hover {
+                border-bottom: solid 4px navy;
+            }
+        }
+        &__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100vw;
+            max-width: 800px;
+            align-items: center;
+        }
+        &__link {
+            color: rgb(180,180,180);
+            transition: all .3s ease-in-out;
+        }
+        &--active {
+            border-bottom: solid 4px navy;
+        }
+        &--active > a {
+            font-weight: bold;
+            color: navy;
+        }
+    }
+    .category--fixed {
+        position: fixed;
+        left: 0px;
+        top: 120px;
+        background-color: white;
+        width: 100vw;
+        z-index: 1000;
+    }
+    .it {
+        .header {
+            background-image: url("../src/img/informatyka.jpg");
+            align-items: flex-start;
+        .titleBox {
+            &::before {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                top: -52px;
+                margin: 0px;  
+                z-index: -1;    
+                left: 0px;
+                border-bottom: 500px solid rgba(162, 235, 240, 0.7);
+	            border-right: 99vw solid transparent;
+
+            }
+            .title {
+                margin-left: -150px;
+
+            }
+            .subtitle {
+                margin-left: 30px;
+            }
+            .buttonContent {
+                background-color: rgb(162, 235, 240);
+                &:hover {
+                    color: rgb(36, 217, 230);
+                }
+        }
+        }
+    }
+}
+    .math {
+        .header {
+            background-image: url("../src/img/matematyka.jpg");
+            align-items: flex-end;
+        .titleBox {
+            &::before {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                top: -62px;
+                margin: 0px;  
+                z-index: -1;    
+                right: 0px;
+                border-bottom: 500px solid rgba(162, 187, 240, .7);
+                border-left: 99vw solid transparent;
+            }
+            .title {
+                margin-right: -150px;
+
+            }
+            .subtitle {
+                margin-right: 30px;
+            }
+            .buttonContent {
+                background-color: rgb(162, 187, 240);
+                &:hover {
+                    color: rgb(39, 99, 230);
+                }
+
+            }
+        }
+        }
+    }
+    .physics {
+        .header {
+            background-image: url("../src/img/fizyka.jpg");
+            align-items: flex-start;
+        .titleBox {
+            &::before {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                top: -62px;
+                margin: 0px;  
+                z-index: -1;    
+                left: 0px;
+                border-bottom: 500px solid rgba(196, 162, 240, 0.7);
+	            border-right: 99vw solid transparent;
+
+            }
+            .title {
+                margin-left: -150px;
+
+            }
+            .subtitle {
+                margin-left: 30px;
+            }
+            .buttonContent {
+                background-color: rgb(196, 162, 240);
+                &:hover {
+                    color: rgb(120, 36, 230);
+                }
+            }
+        }
+        }
+    }
+    .enginering {
+        .header {
+            background-image: url("../src/img/inzynieria.jpg");
+            align-items: flex-end;
+        .titleBox {
+            &::before {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                top: -52px;
+                margin: 0px;  
+                z-index: -1;    
+                right: 0px;
+                border-bottom: 500px solid rgba(240, 222, 162, 0.7);
+                border-left: 99vw solid transparent;
+            }
+            .title {
+                margin-right: -150px;
+
+            }
+            .subtitle {
+                margin-right: 30px;
+            }
+            .buttonContent {
+                background-color: rgb(240, 222, 162);
+                &:hover {
+                    color: rgb(230, 186, 42);
+                }
+            }
+        }
+        }
+    }
+    .it, .math, .physics, .enginering {
+        .header {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 500px;
+            width: 100%;
+            z-index: 0;
+            .titleBox {
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                width: 500px;
+                .title {
+                    margin-top: 120px;
+                    font-size: 36px;
+                    margin-bottom: 100px;
+                    z-index: 2;
+                }
+                .subtitle {
+                    font-size: 18px;
+                    z-index: 2;
+                    margin-bottom: 50px;
+                    text-align: center;
+                }
+                .buttonContent {
+                    align-self: center;
+                    text-align: center;
+                    width: 250px;
+                    padding: 10px;
+                    border: solid 1px rgb(4, 63, 97);
+                    z-index: 2;
+                    font-size: 18px;
+                    color: rgb(90, 88, 88);
+                    transition: all .5s ease-in-out;
+                    &:hover {
+                        background-color: whitesmoke;
+                        transform: scale(1.1);
+                        box-shadow: 0px 0px 7px 1px rgb(56, 56, 56);
+                    }
+                }
+
+            }
+        }
+        .content {
+            &__box {
+                grid-template-columns: 1fr 1fr;
+        }
+    }
+    }
+    .banner {
+        &__content:nth-child(2) {
+            display: flex;
+            width: 33.3vw;
+            max-width: 33.3vw;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        &__content:nth-child(1), &__content:nth-child(3) {
+            display: flex;
+            position: relative;
+            width: 33.3vw;
+            flex-wrap:wrap;
+        }
+        &__img {
+            position: relative;
+            padding:0px;
+            border: 0px;
+            width: 50%;
+            height: 200px;
+        }
+    }
+    .newsletter {
+        padding: 0 30px;
+        flex-direction: row;
+        &__header, &__saver {
+            width: 50%;
+        }
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .mainHeader {
+        background-image: url("../src/img/books_big.jpg");
+        &__box {
+            position: relative;
+            left: 5vw;
+            padding: 30px;
+            width: 500px;
+        }
+    }
+ .it, .math, .physics, .enginering {   
+    .content {
+        &__box {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
+}
