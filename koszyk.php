@@ -1,8 +1,8 @@
 <?php
-/*if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['user'])){
     echo "<script type='text/javascript'>window.alert('By korzystać z koszyka musisz być zalogowany');
     location.href='zaloguj.php';</script>";
-};*/
+};
 ?>
 <?php
 require('head.php');
