@@ -1,0 +1,28 @@
+.mainHeader {
+        position: relative;
+        background-image: url("../src/img/koszyk_sm.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: none;
+        background-color: rgba(117, 132, 221, 0.9);
+        background-blend-mode: multiply;
+        min-height: calc(80vh - 100px);
+        max-height: 800px;
+}
+
+
+
+
+
+
+@media all and (min-width: 768px){
+    .mainHeader {
+        background-image: url("../src/img/koszyk_md.jpg");
+    }
+}
+
+@media all and (min-width: 1024px){
+    .mainHeader {
+        background-image: url("../src/img/koszyk_lg.jpg");
+    }
+}

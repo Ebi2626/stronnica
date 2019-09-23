@@ -1,7 +1,5 @@
-﻿    <nav class="menu" id="menu">
-    <div class="session">
-    <?php
-    if(isset($_SESSION['user'])){
+﻿<nav class="menu" id="menu"><div class="session"><?php
+if(isset($_SESSION['user'])){
     echo "<p class='user'>".$_SESSION['user']."</p>";
     echo "<a class='logout' href='logout.php'>Wyloguj <i style='font-size: 16px;' class='fa fa-sign-out' aria-hidden='true'></i></a>";
     }

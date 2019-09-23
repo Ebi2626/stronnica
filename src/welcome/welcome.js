@@ -1,6 +1,6 @@
 import "../sass/main.scss";
 import "../sass/index.scss";
-import "../sass/koszyk.scss";
+import "../sass/welcome.scss";
 
 var submenu = document.querySelector("#submenu"),
 menu = document.querySelector(".hamburger");

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 22 Wrz 2019, 21:57
--- Wersja serwera: 10.1.37-MariaDB
--- Wersja PHP: 7.2.12
+-- Czas generowania: 23 Wrz 2019, 20:39
+-- Wersja serwera: 10.4.6-MariaDB
+-- Wersja PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -64,7 +64,9 @@ INSERT INTO `klienci` (`idklienta`, `imie`, `nazwisko`, `miejscowosc`, `email`, 
 (8, 'Mateusz', 'Skorupa', 'Gdańsk', 'zolw3342@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
 (9, 'Jerzy', 'Rutkowski', 'Rybnik', 'juro88@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
 (10, 'Joanna', 'Dostojewska', 'Pułtusk', 'karenina@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO'),
-(11, 'Lola', 'Kola', 'KrakÃ³w', 'lola@patola.pl', '$2y$10$RuGQaUkyLGphxXEpTvCpvO89xouo6Jq5tBgTds/Ndo5LQI6G5Nl/K');
+(11, 'Lola', 'Kola', 'KrakÃ³w', 'lola@patola.pl', '$2y$10$RuGQaUkyLGphxXEpTvCpvO89xouo6Jq5tBgTds/Ndo5LQI6G5Nl/K'),
+(12, 'Sebastian', 'Testowy', 'KrakÃ³w', 'seba@testowy.pl', '$2y$10$pszxm82DcrGxRl3VunZvmuUt.Of5HQF8ER.sY4nle3HZbaMwlwkCi'),
+(13, 'Testowy', 'Tester', 'ChrzanÃ³w', 'testowy@tester.pl', '$2y$10$cQJu6vMe2pZG/eSpaXW9K.m9ml90DQz.r5yUvHwHHNDLP0Cyp4p/m');
 
 -- --------------------------------------------------------
 
@@ -167,7 +169,7 @@ ALTER TABLE `avatary`
 -- AUTO_INCREMENT dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
-  MODIFY `idklienta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idklienta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT dla tabeli `ksiazki`

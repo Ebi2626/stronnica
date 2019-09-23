@@ -1,7 +1,8 @@
 <?php
-if($_SESSION['udanarejestracja']!=true){
-  header('Location: zarejestruj.php');
-}
+/*if(!isset($_SESSION['user'])){
+    echo "<script type='text/javascript'>window.alert('By korzystać z koszyka musisz być zalogowany');
+    location.href='zaloguj.php';</script>";
+};*/
 ?>
 <?php
 require('head.php');
@@ -13,26 +14,21 @@ $filename = basename(__FILE__);
 echo substr($filename, 0, -4);
 
 ?>.bundle.css" />
-<title>Stronnica - Twoja Księgarnia Internetowa</title>
+<title>Stronnica - Koszyk</title>
 </head>
 <body>
-<header class="mainHeader">
-    <?php 
-    require("nav.php");
-    ?>
-        <div class="welcome__box" id="welcome__box">
-            <?php 
-            if (isset($_SESSION['pass'])){
-                if ($_SESSION['refreshing'] < 1){
-                echo "<p class='slide slide--active'>Zalogowano pomyślnie</p>";
-                $_SESSION['refreshing']++;
-                };
-            };
-            ?>
-            <h3 class="welcome__title">Gratulacje - Twoja rejestracja przebiegła pomyślnie!</h3>
-            <p class="welcome__text">Dzięki posiadaniu konta użytkownika możesz bez problemu zamawiać książki oraz przeglądać historię swoich zamówień w panelu klienta. Pamiętaj jednak, że wszystkie zamówienia realizowane są dopiero po zaksięgowaniu płatności. Mamy nadzieję, że zasoby naszej księgarni przysporzą Ci nie tylko wiedzy, ale także frajdy z odkrywania tego co nieznane!</p>
-            <a href="zaloguj.php"><div class="welcome__button"><p class="welcome__buttonText">Przejdź do logowania</p></div></a>
-        </div>
+<header class="mainHeader"><?php 
+require("nav.php");
+?>
+        <div class="bucket">
+            <div class="bucket__person">
+
+            </div>
+            <div class="bucket__history">
+
+            </div>
+
+</div>
     </header>
     <div class="banner" id="banner">
         <div class="banner__content">

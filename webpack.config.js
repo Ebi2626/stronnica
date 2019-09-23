@@ -15,7 +15,8 @@ module.exports = {
     zarejestruj: './src/zarejestruj/zarejestruj.js',
     main: './src/main/main.js',
     user: './src/user/user.js',
-    index: './src/index/index.js'
+    index: './src/index/index.js',
+    welcome: './src/welcome/welcome.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
