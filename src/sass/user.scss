@@ -1,0 +1,91 @@
+.user {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  width: 85vw;
+  z-index: 10000;
+  background-color: rgb(228, 225, 225);
+  top: 175px;
+  left: -85vw;
+  min-height: 300px;
+  justify-content: space-between;
+  border-radius: 0px 5px 5px 0px;
+  border-top: double 2px rgb(150, 150, 150);
+  border-bottom: double 2px rgb(150, 150, 150);
+  border-right: double 2px rgb(150, 150, 150);
+  transition: left 0.3s ease-in-out;
+  &--active {
+    left: 0px !important;
+  }
+  &__header {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    height: 90px;
+    .hook {
+      position: absolute;
+      cursor: pointer;
+      -webkit-cursor: pointer;
+      top: 40px;
+      right: 0px;
+      margin-right: -25px;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(228, 225, 225);
+      border-radius: 50%;
+    }
+    .user__title {
+        margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .user__avatar {
+      width: 50px;
+      min-height: 50px;
+      height: auto;
+      margin: 0 auto;
+      background-color: black;
+      border-radius: 50%;
+      border: solid 2px rgb(150, 150, 150);
+    }
+  }
+  &__options {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+    align-items: flex-start;
+    justify-content: space-around;
+    overflow: hidden;
+    a {
+      width: 100%;
+      text-decoration: none;
+      color: darkslategrey;
+      transition: transform 0.2s ease-in-out, width 0.2s ease-in-out,
+        color 0.01s ease-in-out;
+      &:hover {
+        transform: scale(1.05);
+        color: white;
+        .user__option {
+          width: calc(100% - 5px);
+          transform: translateX(15px);
+        }
+      }
+    }
+    .user__option {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 0 0 5px 5px;
+      height: 35px;
+      width: 100%;
+      border-bottom: solid 2px rgb(150, 150, 150);
+    }
+  }
+}
+@media all and (min-width: 768px) {
+  .user {
+    width: 400px;
+    left: -400px;
+  }
+}
