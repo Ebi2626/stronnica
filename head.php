@@ -9,6 +9,10 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Stronnica to pierwsza w Polsce księgarnia internetowa z możliwością...">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./dist/main.bundle.css">
-    
-
+    <link rel="stylesheet" href="./dist/main.bundle.css"> 
+    <?php 
+    if(isset($_SESSION['user'])){
+        echo '<link rel="stylesheet" href="./dist/user.bundle.css">';
+        echo '<script src="./dist/user.bundle.js"></script>';
+    }
+    ?>

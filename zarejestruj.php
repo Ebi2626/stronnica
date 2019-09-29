@@ -1,11 +1,7 @@
 <?php
 
 require ("head.php")
-/* Klucz witryny:
-6Le1wLkUAAAAAGqRXqOxQe6b9QKheRbDsnUMBIzA
 
-Klucz tajny: 6LdV6rgUAAAAAJNHRVblvERoLPxM6K1R8WdptofP
-*/
 ?>
 <?php
 
@@ -129,6 +125,7 @@ if (isset($_POST['email'])) {
                     $_SESSION['udanarejestracja']=true;
                     Header('Location: welcome.php');
                 } else {
+                    unset($_SESSION['udanarejestracja']);
                     throw new Exception($polaczenie->error);
                 }
         
@@ -168,12 +165,6 @@ echo substr($filename, 0, -4);
 
 <body>
 <main class="mainHeader">
-    <?php 
-if (isset($_SESSION['answer'])){
-    echo $_SESSION['answer'];
-}
-
-?>
 <?php
 
 include("nav.php")

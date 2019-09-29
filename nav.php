@@ -1,6 +1,6 @@
 ﻿<nav class="menu" id="menu"><div class="session"><?php
 if(isset($_SESSION['user'])){
-    echo "<p class='user'>".$_SESSION['user']."</p>";
+    echo "<p class='login'>".$_SESSION['user']."</p>";
     echo "<a class='logout' href='logout.php'>Wyloguj <i style='font-size: 16px;' class='fa fa-sign-out' aria-hidden='true'></i></a>";
     }
     ?></div>
@@ -25,4 +25,9 @@ if(isset($_SESSION['user'])){
             <li class="menu__item"><a href="http://localhost/stronnica/koszyk.php" class="menu__link"><i class="fa fa-shopping-basket" style="font-size: 24px;"></i></a></li>
         </ul>
     </nav>
+    <?php
+    if(isset($_SESSION['user'])){
+        include('user.php');
+    };
+    ?>
 

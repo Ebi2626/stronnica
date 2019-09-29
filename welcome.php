@@ -77,3 +77,6 @@ require("footer.php")
     echo substr($filename, 0, -4);
     ?>.bundle.js"></script>
 </body>
+<?php 
+unset($_SESSION['udanarejestracja']);
+?>

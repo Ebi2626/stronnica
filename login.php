@@ -22,7 +22,8 @@ if ((isset($_POST['email'])) && (isset($_POST['password']))) {
             if($ilu_userow>0) {
                 $wiersz = $rezultat->fetch_assoc();
                 if(password_verify($password, $wiersz['haslo'])){
-
+                    $_SESSION['imie'] = $wiersz['imie'];
+                    $_SESSION['nazwisko'] = $wiersz['nazwisko'];
                     $_SESSION['user'] = $wiersz['email'];
                     $_SESSION['pass'] = 'true';
                     $_SESSION['refreshing'] = 0;
