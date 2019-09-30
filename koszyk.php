@@ -1,13 +1,12 @@
 <?php
+require('head.php');
+?>
+<?php
 if(!isset($_SESSION['user'])){
     echo "<script type='text/javascript'>window.alert('By korzystać z koszyka musisz być zalogowany');
     location.href='zaloguj.php';</script>";
 };
 ?>
-<?php
-require('head.php');
-?>
-
 <link rel="stylesheet" href="./dist/<?php
 
 $filename = basename(__FILE__);
@@ -17,18 +16,43 @@ echo substr($filename, 0, -4);
 <title>Stronnica - Koszyk</title>
 </head>
 <body>
-<header class="mainHeader"><?php 
+<header class="mainHeader"><?php
 require("nav.php");
 ?>
-        <div class="bucket">
-            <div class="bucket__person">
-
+    <div class="bucket">
+        <aside class="bucket__instruction">
+            <ul class="bucket__list">
+                <li class="bucket__step step--active">
+                    <h4 class="bucket__stepTitle">Krok 1/4</h4>
+                    <p class="bucket__stepDescription">Wybór produktów</p>
+                </li>
+                <li class="bucket__step">
+                    <h4 class="bucket__stepTitle">Krok 2/4</h4>
+                    <p class="bucket__stepDescription">Wybór metody płatności i dostawy</p>
+                </li>
+                <li class="bucket__step">
+                    <h4 class="bucket__stepTitle">Krok 3/4</h4>
+                    <p class="bucket__stepDescription">Potwierdzenie danych teleadresowych</p>
+                </li>
+                <li class="bucket__step">
+                    <h4 class="bucket__stepTitle">Krok 4/4</h4>
+                    <p class="bucket__stepDescription">Potwierdzenie zamówienia</p>
+                </li>
+            </ul>
+            <div class="securityGuarantee">
+                <p class="securityGuarantee__text">100% Bezpieczeństwa <i class="fa fa-shield"></i> </p>
             </div>
-            <div class="bucket__history">
-
-            </div>
-
-</div>
+        </aside>
+        <div class="bucket__content">
+            <?php
+            /*if(!isset($_SESSION['bucket'])){
+                require ('emptyBucket.php');
+            } else (isset($_SESSION['bucket']){*/
+                require ('fullBucket.php');
+            //})
+            ?>
+        </div>
+    </div>
     </header>
     <div class="banner" id="banner">
         <div class="banner__content">
