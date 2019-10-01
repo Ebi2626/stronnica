@@ -6,8 +6,9 @@
     background-repeat: none;
     background-color: rgba(100,100,100, .9);
     background-blend-mode: lighten;
-    min-height: calc(80vh - 100px);
-    max-height: 800px;
+    min-height: 600px;
+    height: calc(100vh - 230px);
+    max-height: 1000px;
     &__box {
         padding: 20px;
         width: 100%;
@@ -131,7 +132,7 @@
             color: grey;
         }
         &:hover {
-         background-color: rgb(18, 41, 71); 
+         background-color: rgb(18, 41, 71);
          a {
             color: white;
          }
@@ -204,7 +205,7 @@
                 width: 10px;
                 background-color: white !important;
             }
-        }        
+        }
     }
 }
 
@@ -267,7 +268,7 @@
 }
 @media all and (min-width: 768px) {
 
-    
+
     .mainHeader {
         padding: 0px;
         background-image: url("../src/img/books_medium.jpg");
@@ -335,8 +336,8 @@
                 width: 0;
                 height: 0;
                 top: -52px;
-                margin: 0px;  
-                z-index: -1;    
+                margin: 0px;
+                z-index: -1;
                 left: 0px;
                 border-bottom: 500px solid rgba(162, 235, 240, 0.7);
 	            border-right: 99vw solid transparent;
@@ -369,8 +370,8 @@
                 width: 0;
                 height: 0;
                 top: -62px;
-                margin: 0px;  
-                z-index: -1;    
+                margin: 0px;
+                z-index: -1;
                 right: 0px;
                 border-bottom: 500px solid rgba(162, 187, 240, .7);
                 border-left: 99vw solid transparent;
@@ -403,8 +404,8 @@
                 width: 0;
                 height: 0;
                 top: -62px;
-                margin: 0px;  
-                z-index: -1;    
+                margin: 0px;
+                z-index: -1;
                 left: 0px;
                 border-bottom: 500px solid rgba(196, 162, 240, 0.7);
 	            border-right: 99vw solid transparent;
@@ -437,8 +438,8 @@
                 width: 0;
                 height: 0;
                 top: -52px;
-                margin: 0px;  
-                z-index: -1;    
+                margin: 0px;
+                z-index: -1;
                 right: 0px;
                 border-bottom: 500px solid rgba(240, 222, 162, 0.7);
                 border-left: 99vw solid transparent;
@@ -557,7 +558,7 @@
             width: 500px;
         }
     }
- .it, .math, .physics, .enginering {   
+ .it, .math, .physics, .enginering {
     .content {
         &__box {
             grid-template-columns: 1fr 1fr 1fr 1fr;

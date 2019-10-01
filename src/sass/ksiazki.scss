@@ -6,8 +6,8 @@
     background-repeat: none;
     background-color: rgba(30,30,30, .7);
     background-blend-mode: overlay;
-    min-height: 100vh;
-    height: calc(80vh - 100px);
+    min-height: 600px;
+    height: calc(100vh - 230px);
     max-height: 1000px;
     .searchTitle {
         display: flex;
@@ -21,7 +21,29 @@
         &__text {
             text-transform: uppercase;
             text-align: center;
-
+        }
+    }
+}
+.books {
+    position: relative;
+    display: flex;
+    top: 100px;
+    flex-direction: column;
+    min-width: 400px;
+    width: 80vw;
+    max-width: 800px;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    margin: 20px auto;
+    max-height: 500px;
+    overflow-x: none;
+    overflow-Y: auto;
+    &Table {
+        border: none;
+        th, td {
+            padding: 4px;
+            text-align: center;
         }
     }
 }

@@ -6,16 +6,16 @@
     background-repeat: none;
     background-color: rgba(30,30,30, .7);
     background-blend-mode: overlay;
-    min-height: 100vh;
-    height: calc(80vh - 100px);
-    max-height: 1000px;
+    min-height: calc(80vh - 100px);
+    height: auto;
+    padding-bottom: 30px;
     .searchTitle {
         display: flex;
         position: relative;
         flex-direction: row;
         height: 100px;
         width: 100vw;
-        top: 20px;
+        top: 40px;
         justify-content: center;
         align-items: center;
         &__text {
@@ -24,11 +24,78 @@
 
         }
     }
+    .categories{
+        position: relative;
+        display: flex;
+        top: 50px;
+        flex-direction: column;
+        width: 100vw;
+        justify-content: space-around;
+        align-items: center;
+        &__title {
+            margin: 20px auto;
+            text-align: center;
+            padding: 0 10px;
+            color: white;
+        }
+        &__item {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            justify-content: space-around;
+            min-height: 200px;
+            height: 25vh;
+            align-items: center;
+            text-align: center;
+            .category__list {
+                padding: 5px;
+            }
+            .category__result {
+                display: none;
+            }
+            &--active {
+                .category__result {
+                    display: list-item;
+                }
+            }
+            &:nth-child(2){
+                background-image: url("../src/img/informatyka.jpg");
+                background-position: center;
+                background-size: cover;
+                background-blend-mode: multiply;
+                background-color: white;
+            }
+            &:nth-child(3){
+                background-image: url("../src/img/matematyka.jpg");
+                background-position: center;
+                background-size: cover;
+                background-blend-mode: multiply;
+                background-color: white;
+
+            }
+            &:nth-child(4){
+                background-image: url("../src/img/fizyka.jpg");
+                background-position: center;
+                background-size: cover;
+                background-blend-mode: multiply;
+                background-color: white;
+
+            }
+            &:nth-child(5){
+                background-image: url("../src/img/inzynieria.jpg");
+                background-position: center;
+                background-size: cover;
+                background-blend-mode: multiply;
+                background-color: white;
+            }
+            .category__name {
+                text-align: center;
+                color: white;
+            }
+        }
+    }
 }
 @media all and (min-width: 768px){
     .searchTitle{
-        position: fixed !important;
-        top: 150px !important;
-        left: 0px !important;
     }
 }

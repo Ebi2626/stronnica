@@ -2,7 +2,8 @@ import "../sass/main.scss";
 import "../sass/kategorie.scss";
 
 var submenu = document.querySelector("#submenu"),
-menu = document.querySelector(".hamburger");
+menu = document.querySelector(".hamburger"),
+categoryList = document.querySelectorAll(".categories__item");
 
 function menuFixed() {
    const menu = document.querySelector("#menu"),
@@ -10,7 +11,7 @@ function menuFixed() {
    if (window.pageYOffset > 0) {
        menu.classList.add("menu--sticky");
        logo.classList.add("sticky--logo");
-       
+
    } else {
        menu.classList.remove("menu--sticky");
        logo.classList.remove("sticky--logo");
@@ -42,6 +43,12 @@ function mobileMenu() {
                 };
     } else return;
 }
+function showCategoryList (){
+    categoryList.forEach(el => {
+        el.addEventListener('click', function show(){
+                            el.classList.contains("categories__item--active") ? el.classList.remove("categories__item--active") : el.classList.add("categories__item--active");    })
+    });
+}
 function listener() {
     menu.classList.remove("hamburger__menu--active");
     submenu.classList.remove("submenu--active");
@@ -52,6 +59,7 @@ function listener() {
     });
 }
 
+document.addEventListener("DOMContentLoaded", showCategoryList);
 menu.addEventListener("click", mobileMenu);
 document.addEventListener("scroll", menuFixed);
 window.addEventListener("resize", menuFixed);
