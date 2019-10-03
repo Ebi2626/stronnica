@@ -33,6 +33,7 @@ include("nav.php")
 </div>
 <div class="categories">
   <h2 class="categories__title">W naszej ofercie znajdziesz książki z następujących kategorii</h2>
+  <div class="categories__box">
     <div class="categories__item">
       <h4 class="category__name">Informatyka</h4>
       <ul class="category__list category__list--it">
@@ -149,6 +150,7 @@ else {
   }
 ?>
 </ul>
+</div>
     </div>
 </div>
 </main>

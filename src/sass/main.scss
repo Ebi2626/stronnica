@@ -324,9 +324,10 @@ h1,h2,h3,h4,h5,h6 {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
+    top: 50px;
     align-items: center;
     line-height: 22px;
+    z-index: 10;
     &__logo {
         display: none;
         width: 150px;
@@ -358,6 +359,7 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 .contact {
+    top: 70px;
     border-top: solid 1px darkgray;
     &__list {
         display: flex;

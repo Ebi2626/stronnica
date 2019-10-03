@@ -59,6 +59,7 @@ include("nav.php")
                     echo "<td>".$wiersz->nazwiskoautora."</td>";
                     echo "<td>".$wiersz->tytul."</td>";
                     echo "<td>".$wiersz->cena." zł </td>";
+                    echo "<td><img style='width: 20px; height: 20px;' src='./src/okladki/".$wiersz->Okladka."'/></td>";
                     echo "</tr>";
                 }
                 $rezultat->close();

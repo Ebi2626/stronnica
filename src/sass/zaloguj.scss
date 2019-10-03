@@ -6,9 +6,8 @@
     background-repeat: no-repeat;
     background-color: rgba(80,80,80, .8);
     background-blend-mode: overlay;
-    min-height: 600px;
-    height: calc(100vh - 230px);
-    max-height: 1000px;
+    min-height: 650px;
+    padding-bottom: 30px;    
     .menu {
         &__logo {
             .logo__img {

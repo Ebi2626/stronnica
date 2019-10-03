@@ -52,10 +52,42 @@ echo substr($filename, 0, -4);
                 <p class="content__text">Podręczniki od 29,99zł</p>
             </div>
             <div class="content__box">
-                <div class="content__items"></div>
-                <div class="content__items"></div>
-                <div class="content__items"></div>
-                <div class="content__items"></div>
+                <?php
+    require_once "connect.php";
+
+    $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+
+    if($polaczenie->connect_errno!=0) {
+        echo "Error: ".$polaczenie->connect_errno;
+    }
+    else {
+        $sql = "SELECT * FROM ksiazki WHERE Gatunek='Informatyka'";
+        if ($rezultat = @$polaczenie->query($sql)){
+            $ile_ksiazek = $rezultat->num_rows;
+            if($ile_ksiazek>0) {
+                $i=0;
+                while ($wiersz = $rezultat->fetch_object()) {
+                    echo "<div class='content__items' id='content".$wiersz->idksiazki."' >";
+                    echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
+                    echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
+                    echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
+                    echo "</div>";
+                    $i++;
+                    if ($i > 3) {
+                    break;
+                } 
+                }
+                $rezultat->close();
+                    } else {
+            echo "nie znaleziono książek";
+            $rezultat->close();
+        }
+            } else {
+                echo"<p class='nopass'> Błąd połączenia 2</p>";
+                $polaczenie->close();
+            }
+        }
+?>
             </div>
         </div>
     </section>
@@ -75,10 +107,40 @@ echo substr($filename, 0, -4);
                 <p class="content__text">Podręczniki od 19,99zł</p>
             </div>
             <div class="content__box">
-            <div class="content__items"></div>
-                <div class="content__items"></div>
-                <div class="content__items"></div>
-                <div class="content__items"></div>
+                <?php
+            $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+
+    if($polaczenie->connect_errno!=0) {
+     echo "Error: ".$polaczenie->connect_errno;
+}
+else {
+    $sql = "SELECT * FROM ksiazki WHERE Gatunek='Matematyka'";
+    if ($rezultat = @$polaczenie->query($sql)){
+        $ile_ksiazek = $rezultat->num_rows;
+        if($ile_ksiazek>0) {
+            $i=0;
+            while ($wiersz = $rezultat->fetch_object()) {
+                echo "<div class='content__items' id='content".$wiersz->idksiazki."' >";
+                echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
+                echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
+                echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
+                echo "</div>";
+                $i++;
+                if ($i > 3) {
+                    break;
+                } 
+            }
+            $rezultat->close();
+                } else {
+        echo "nie znaleziono książek";
+        $rezultat->close();
+    }
+        } else {
+            echo"<p class='nopass'> Błąd połączenia 2</p>";
+            $polaczenie->close();
+        }
+    }
+?>
             </div>
         </div>
     </section>
@@ -98,11 +160,41 @@ echo substr($filename, 0, -4);
                 <p class="content__text">Podręczniki od 25,99zł</p>
             </div>
             <div class="content__box">
-            <div class="content__items"></div>
-<div class="content__items"><h2>ksiazka</h2><div style="background-color:black; width: 100px; height: 150px;"></div></div>
-                <div class="content__items"></div>
-                <div class="content__items"></div>
-            </div>
+                <?php
+            
+    $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+
+if($polaczenie->connect_errno!=0) {
+    echo "Error: ".$polaczenie->connect_errno;
+}
+else {
+    $sql = "SELECT * FROM ksiazki WHERE Gatunek='Fizyka'";
+    if ($rezultat = @$polaczenie->query($sql)){
+        $ile_ksiazek = $rezultat->num_rows;
+        if($ile_ksiazek>0) {
+            $i=0;
+            while ($wiersz = $rezultat->fetch_object()) {
+                echo "<div class='content__items' id='content".$wiersz->idksiazki."' >";
+                echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
+                echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
+                echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
+                echo "</div>";
+                $i++;
+                if ($i > 3) {
+                break;
+            } 
+            }
+            $rezultat->close();
+                } else {
+        echo "nie znaleziono książek";
+        $rezultat->close();
+    }
+        } else {
+            echo"<p class='nopass'> Błąd połączenia 2</p>";
+            $polaczenie->close();
+        }
+    }
+?>
         </div>
     </section>
     <section class="enginering" id="enginering">
@@ -121,11 +213,41 @@ echo substr($filename, 0, -4);
                 <p class="content__text">Podręczniki od 49,99zł</p>
             </div>
             <div class="content__box">
-            <div class="content__items"></div>
-                <div class="content__items"></div>
-                <div class="content__items"></div>
-                <div class="content__items"></div>
-            </div>
+            <?php
+            
+    $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+
+if($polaczenie->connect_errno!=0) {
+    echo "Error: ".$polaczenie->connect_errno;
+}
+else {
+    $sql = "SELECT * FROM ksiazki WHERE Gatunek='Inzynieria'";
+    if ($rezultat = @$polaczenie->query($sql)){
+        $ile_ksiazek = $rezultat->num_rows;
+        if($ile_ksiazek>0) {
+            $i=0;
+            while ($wiersz = $rezultat->fetch_object()) {
+                echo "<div class='content__items' id='content".$wiersz->idksiazki."' >";
+                echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
+                echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
+                echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
+                echo "</div>";
+                $i++;
+                if ($i > 3) {
+                break;
+            } 
+            }
+            $rezultat->close();
+                } else {
+        echo "nie znaleziono książek";
+        $rezultat->close();
+    }
+        } else {
+            echo"<p class='nopass'> Błąd połączenia 2</p>";
+            $polaczenie->close();
+        }
+    }
+?>
         </div>
     </section>
     <div class="banner" id="banner">

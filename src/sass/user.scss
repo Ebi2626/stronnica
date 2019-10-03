@@ -2,13 +2,14 @@
   display: flex;
   position: fixed;
   flex-direction: column;
-  width: 85vw;
-  z-index: 10000;
+  width: 90vw;
+  z-index: 1000000;
   background-color: rgb(228, 225, 225);
-  top: 175px;
-  left: -85vw;
-  min-height: 300px;
-  justify-content: space-between;
+  top: 0px;
+  left: -90vw;
+  height: 100vh;
+  max-height: 400px;
+  justify-content: space-around;
   border-radius: 0px 5px 5px 0px;
   border-top: double 2px rgb(150, 150, 150);
   border-bottom: double 2px rgb(150, 150, 150);
@@ -16,6 +17,12 @@
   transition: left 0.3s ease-in-out;
   &--active {
     left: 0px !important;
+    max-width: 400px;
+    .hook {
+      &__img {
+        transform: rotate(270deg) !important;
+      }
+    }
   }
   &__header {
     display: flex;
@@ -23,11 +30,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 10px;
-    height: 90px;
+    margin-bottom: 20px;
+    height: 50px;
     .hook {
       position: absolute;
       cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
       -webkit-cursor: pointer;
       top: 40px;
       right: 0px;
@@ -36,19 +47,27 @@
       height: 50px;
       background-color: rgb(228, 225, 225);
       border-radius: 50%;
+      &__img {
+        margin-left: 10px;
+        width: 20px;
+        height: auto;
+        position: relative;
+        transform: rotate(90deg);
+        transition: transform 1s ease-in-out;
+      }
     }
     .user__title {
         margin-top: 10px;
       margin-bottom: 10px;
     }
     .user__avatar {
-      width: 50px;
-      min-height: 50px;
-      height: auto;
+      display: none;
+      width: 60px;
+      height: 60px;
+      padding: 5px;
       margin: 0 auto;
-      background-color: black;
       border-radius: 50%;
-      border: solid 2px rgb(150, 150, 150);
+      border: solid 2px rgb(187, 129, 129);
     }
   }
   &__options {
@@ -57,7 +76,8 @@
     padding-left: 0px;
     align-items: flex-start;
     justify-content: space-around;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     a {
       width: 100%;
       text-decoration: none;
@@ -85,7 +105,16 @@
 }
 @media all and (min-width: 768px) {
   .user {
+    top: 170px;
+    height: 260px;
     width: 400px;
     left: -400px;
+    justify-content: flex-end;
+    &__header {
+      height: 50px;
+      .user__avatar {
+        display: block;
+      }
+    }
   }
 }

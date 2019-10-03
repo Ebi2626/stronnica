@@ -7,8 +7,7 @@
     background-color: rgba(30,30,30, .7);
     background-blend-mode: overlay;
     min-height: 600px;
-    height: calc(100vh - 230px);
-    max-height: 1000px;
+    padding-bottom: 150px;
     .searchTitle {
         display: flex;
         position: relative;
