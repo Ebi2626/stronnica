@@ -9,15 +9,36 @@ engineringPos = document.querySelector("#enginering").offsetTop,
 bannerPos = document.querySelector("#banner").offsetTop,
 hamburger = document.querySelector("#hamburger"),
 submenu = document.querySelector("#submenu"),
-menu = document.querySelector(".hamburger");
+menu = document.querySelector(".hamburger"),
+ksiazki = document.querySelectorAll(".content__items");
 
+
+
+function addToBucketReady(){
+    let click = 0;
+    function addToBucket(){
+        click++;
+        let autorKsiazki = this.children[0].innerHTML;
+        let tytulKsiazki = this.children[2].innerHTML;
+        let pozycja = {
+            autor: autorKsiazki,
+            tytul: tytulKsiazki
+        }
+        this.parentNode.setAttribute("href", "http://localhost/stronnica/basketItem.php?autor="+pozycja.autor+"&tytul="+pozycja.tytul);
+        let pozycjaJSON = JSON.stringify(pozycja);
+        let nowy = JSON.parse(pozycjaJSON);
+    }
+    ksiazki.forEach(ksiozka =>{
+                   ksiozka.addEventListener("click", addToBucket);
+                     });
+}
 function menuFixed() {
    const menu = document.querySelector("#menu"),
    logo = document.querySelector("#logo");
    if (window.pageYOffset > 0) {
        menu.classList.add("menu--sticky");
        logo.classList.add("sticky--logo");
-       
+
    } else {
        menu.classList.remove("menu--sticky");
        logo.classList.remove("sticky--logo");
@@ -46,7 +67,7 @@ function categoryFixed() {
             category.classList.remove("category--fixed");
             logo.classList.remove("logo--smaller");
             logoText.classList.remove("invisible");
-        
+
             } else return
         }
 
@@ -59,7 +80,7 @@ function categoryFixed() {
     }
 }
 var calculateX = function () {
-    if (window.innerWidth < 800) { 
+    if (window.innerWidth < 800) {
         let x = 300;
         return x;
     } else {
@@ -93,7 +114,7 @@ function categoryActive() {
         eng.classList.add("category--active");
     } else {
         eng.classList.remove("category--active");
-    };    
+    };
 }
 function mobileMenu() {
     const hamburger = document.querySelector("#hamburger"),
@@ -135,3 +156,4 @@ document.addEventListener("scroll", categoryFixed);
 window.addEventListener("resize", categoryFixed);
 document.addEventListener("scroll", categoryActive);
 submenu.addEventListener("click", listener);
+window.addEventListener("DOMContentLoaded", addToBucketReady)
