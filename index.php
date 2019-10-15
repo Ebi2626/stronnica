@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require('head.php');
 ?>
 <link rel="stylesheet" href="./dist/<?php
@@ -11,11 +11,11 @@ echo substr($filename, 0, -4);
 </head>
 <body>
 <header class="mainHeader">
-    <?php 
+    <?php
     include("nav.php");
     ?>
         <div class="mainHeader__box" id="mainHeader__box">
-            <?php 
+            <?php
             if (isset($_SESSION['pass'])){
                 if ($_SESSION['refreshing'] < 1){
                 echo "<p class='slide slide--active'>Zalogowano pomyślnie</p>";
@@ -61,21 +61,22 @@ echo substr($filename, 0, -4);
         echo "Error: ".$polaczenie->connect_errno;
     }
     else {
+        $polaczenie -> query("SET NAMES 'utf8'");
         $sql = "SELECT * FROM ksiazki WHERE Gatunek='Informatyka'";
         if ($rezultat = @$polaczenie->query($sql)){
             $ile_ksiazek = $rezultat->num_rows;
             if($ile_ksiazek>0) {
                 $i=0;
                 while ($wiersz = $rezultat->fetch_object()) {
-                    echo "<div class='content__items' id='content".$wiersz->idksiazki."' >";
-                    echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
+                    echo "<a class='sending'><div class='content__items' id='content".$wiersz->idksiazki."' >";
+                    echo "<h4 class='content__bookAuthor' name='autor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
                     echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
-                    echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
-                    echo "</div>";
+                    echo "<p class='content__bookTitle' name='tytul'>".$wiersz->tytul."</p>";
+                    echo "</div></a>";
                     $i++;
                     if ($i > 3) {
                     break;
-                } 
+                }
                 }
                 $rezultat->close();
                     } else {
@@ -114,21 +115,22 @@ echo substr($filename, 0, -4);
      echo "Error: ".$polaczenie->connect_errno;
 }
 else {
+    $polaczenie -> query("SET NAMES 'utf8'");
     $sql = "SELECT * FROM ksiazki WHERE Gatunek='Matematyka'";
     if ($rezultat = @$polaczenie->query($sql)){
         $ile_ksiazek = $rezultat->num_rows;
         if($ile_ksiazek>0) {
             $i=0;
             while ($wiersz = $rezultat->fetch_object()) {
-                echo "<div class='content__items' id='content".$wiersz->idksiazki."' >";
+                echo "<a class='sending'><div class='content__items' id='content".$wiersz->idksiazki."' >";
                 echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
                 echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
                 echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
-                echo "</div>";
+                echo "</div></a>";
                 $i++;
                 if ($i > 3) {
                     break;
-                } 
+                }
             }
             $rezultat->close();
                 } else {
@@ -161,28 +163,29 @@ else {
             </div>
             <div class="content__box">
                 <?php
-            
+
     $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 
 if($polaczenie->connect_errno!=0) {
     echo "Error: ".$polaczenie->connect_errno;
 }
 else {
+    $polaczenie -> query("SET NAMES 'utf8'");
     $sql = "SELECT * FROM ksiazki WHERE Gatunek='Fizyka'";
     if ($rezultat = @$polaczenie->query($sql)){
         $ile_ksiazek = $rezultat->num_rows;
         if($ile_ksiazek>0) {
             $i=0;
             while ($wiersz = $rezultat->fetch_object()) {
-                echo "<div class='content__items' id='content".$wiersz->idksiazki."' >";
+                echo "<a class='sending'><div class='content__items' id='content".$wiersz->idksiazki."' >";
                 echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
                 echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
                 echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
-                echo "</div>";
+                echo "</div></a>";
                 $i++;
                 if ($i > 3) {
                 break;
-            } 
+            }
             }
             $rezultat->close();
                 } else {
@@ -214,28 +217,29 @@ else {
             </div>
             <div class="content__box">
             <?php
-            
+
     $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 
 if($polaczenie->connect_errno!=0) {
     echo "Error: ".$polaczenie->connect_errno;
 }
 else {
+    $polaczenie -> query("SET NAMES 'utf8'");
     $sql = "SELECT * FROM ksiazki WHERE Gatunek='Inzynieria'";
     if ($rezultat = @$polaczenie->query($sql)){
         $ile_ksiazek = $rezultat->num_rows;
         if($ile_ksiazek>0) {
             $i=0;
             while ($wiersz = $rezultat->fetch_object()) {
-                echo "<div class='content__items' id='content".$wiersz->idksiazki."' >";
+                echo "<a class='sending'><div class='content__items' id='content".$wiersz->idksiazki."' >";
                 echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
                 echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
                 echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
-                echo "</div>";
+                echo "</div></a>";
                 $i++;
                 if ($i > 3) {
                 break;
-            } 
+            }
             }
             $rezultat->close();
                 } else {

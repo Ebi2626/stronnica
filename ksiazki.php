@@ -48,6 +48,7 @@ include("nav.php")
         echo "Error: ".$polaczenie->connect_errno;
     }
     else {
+        $polaczenie -> query("SET NAMES 'utf8'");
         $sql = "SELECT * FROM ksiazki";
         if ($rezultat = @$polaczenie->query($sql)){
             $ile_ksiazek = $rezultat->num_rows;
