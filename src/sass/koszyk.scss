@@ -6,8 +6,8 @@
         background-repeat: none;
         background-color: rgba(1, 5, 238, 0.6);
         background-blend-mode: darken;
-        min-height: calc(100vh - 230px);
-        max-height: 800px;
+        height: auto !important;
+        margin-bottom: 50px;
 }
 .delete, .deleteAll {
     cursor: pointer;

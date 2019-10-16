@@ -15,6 +15,7 @@ ksiazki = document.querySelectorAll(".content__items");
 
 
 function addToBucketReady(){
+    let login = document.querySelector(".loginText");
     let click = 0;
     function addToBucket(){
         click++;
@@ -28,8 +29,15 @@ function addToBucketReady(){
         let pozycjaJSON = JSON.stringify(pozycja);
         let nowy = JSON.parse(pozycjaJSON);
     }
+    function loginAlert() {
+        alert ("Musisz byc zalogowany, by dodac ksiazke do koszyka");
+    }
     ksiazki.forEach(ksiozka =>{
+        if (login != null){
                    ksiozka.addEventListener("click", addToBucket);
+        } else {
+            ksiozka.addEventListener("click", loginAlert);
+        }
                      });
 }
 function menuFixed() {
