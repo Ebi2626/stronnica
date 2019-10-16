@@ -14,6 +14,12 @@ echo substr($filename, 0, -4);
 
 ?>.bundle.css" />
 <title>Stronnica - Koszyk</title>
+<?php
+   $userMail = $_SESSION['user'];
+   $prawieUser = explode("@",$userMail);
+   $user = $prawieUser[0];
+   $userFile = "orders/".$user.".json";
+?>
 </head>
 <body>
 <header class="mainHeader"><?php
@@ -22,20 +28,20 @@ require("nav.php");
     <div class="bucket">
         <aside class="bucket__instruction">
             <ul class="bucket__list">
-                <li class="bucket__step step--active">
+                <li class="bucket__step <?php if(!file_exists($userFile)){echo "step--active";}?>">
                     <h4 class="bucket__stepTitle">Krok 1/4</h4>
                     <p class="bucket__stepDescription">Wybór produktów</p>
                 </li>
-                <li class="bucket__step">
+                <li class="bucket__step <?php if((file_exists($userFile)) && (!isset($_SESSION['payment']))){echo "step--active";}?>">
                     <h4 class="bucket__stepTitle">Krok 2/4</h4>
                     <p class="bucket__stepDescription">Wybór metody płatności i dostawy</p>
                 </li>
                 <li class="bucket__step">
-                    <h4 class="bucket__stepTitle">Krok 3/4</h4>
+                    <h4 class="bucket__stepTitle <?php if((isset($_SESSION['payment'])) && (!isset($_SESSION['adress_data']))){echo "step--active";}?>">Krok 3/4</h4>
                     <p class="bucket__stepDescription">Potwierdzenie danych teleadresowych</p>
                 </li>
                 <li class="bucket__step">
-                    <h4 class="bucket__stepTitle">Krok 4/4</h4>
+                    <h4 class="bucket__stepTitle <?php if(isset($_SESSION['adress_data'])){echo "step--active";}?>">Krok 4/4</h4>
                     <p class="bucket__stepDescription">Potwierdzenie zamówienia</p>
                 </li>
             </ul>
@@ -44,12 +50,8 @@ require("nav.php");
             </div>
         </aside>
         <div class="bucket__content">
-            <?php
-            /*if(!isset($_SESSION['bucket'])){
-                require ('emptyBucket.php');
-            } else (isset($_SESSION['bucket']){*/
+        <?php
                 require ('fullBucket.php');
-            //})
             ?>
         </div>
     </div>
