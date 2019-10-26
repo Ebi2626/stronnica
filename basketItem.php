@@ -14,29 +14,26 @@ class pozycja {
         echo $this->tytul;
     }
 }
-
 $pozycja = new pozycja();
     $pozycja->autor = $a;
     $pozycja->tytul = $t;
 $pozycjaJSON = json_encode($pozycja)."/";
-
-
-
 // wczytanie starych danych
 // stworzenie nowych danych
 if(file_exists($userFile)){
    $stareDane = fread(fopen($userFile, "rt"), filesize($userFile));
-   $noweDane = $stareDane."\r\n".$pozycjaJSON;
+   $noweDane = $stareDane."\r\n".$pozycjaJSON."\r\n";
    $fp = fopen($userFile, "w");
    fputs($fp, $noweDane);
    fclose($fp);
-   echo "Zapisuje do istniejącego pliku";
+   $_SESSION['w_koszyku'] = 1;
+   Header('Location:index.php');
 } else {
     $noweDane = $pozycjaJSON;
     $fp = fopen($userFile, "w+t");
     fputs($fp, $noweDane);
     fclose($fp);
-   echo "Tworze nowy plik";
+    $_SESSION['w_koszyku'] = 1;
+   Header('Location:index.php');
 };
-
 ?>

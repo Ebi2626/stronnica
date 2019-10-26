@@ -21,7 +21,7 @@ $userFile = "orders/".$user.".json";
 <tbody>
 <?php
 if(file_exists($userFile)){
-    $plik = fopen($userFile,'r'); 
+    $plik = fopen($userFile,'r');
     $tablica = file_get_contents($userFile);
     $tablica = explode("/", $tablica);
     $n = 0;
@@ -37,7 +37,7 @@ if(file_exists($userFile)){
         echo "<tr class='fullBucket__row'>";
         echo "<td>".$title."<br>".$autor."</td>";
         ?>
-        <!-- KOMÓRKA POBIERAJĄCA CENE Z DB -->
+        <!-- KOMÓRKI POBIERAJĄCA CENE Z DB -->
         <?php
         require_once("connect.php");
         $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
@@ -54,7 +54,7 @@ if(file_exists($userFile)){
                 echo "<td>".$wiersz->cena."</td>";
                 echo "<td></td>";
                 echo "<td></td>";
-                echo "<td></td>";
+                echo "<td><a href='removeItem.php' class='remove__item'>X</a></td>";
                 echo "</tr>";
                 $rezultat->close();
                     } else {
@@ -66,15 +66,14 @@ if(file_exists($userFile)){
                 $polaczenie->close();
             }
         }
-
         $n++;
         }
 } else {
     echo "Brak danych do wyswietlenia";
 };
-// Koniec komorki pobierającej dane
+// Koniec komorek pobierających dane
 ?>
-            
+
 </tbody>
             <tfoot>
             <tr class="fullBucket__summary">
@@ -89,4 +88,4 @@ if(file_exists($userFile)){
 </tfoot>
 </table>
 <input type="submit" class="button" name="step2" id="step2" value="Dalej" />
-</form> 
+</form>

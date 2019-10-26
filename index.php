@@ -23,6 +23,15 @@ echo substr($filename, 0, -4);
                 };
             };
             ?>
+             <?php
+            if (isset($_SESSION['w_koszyku'])){
+                echo "Jest w koszyku";
+                if ($_SESSION['w_koszyku'] == 1){
+                echo "<p class='slide slide--active'>Dodano do koszyka</p>";
+                $_SESSION['w_koszyku']++;
+                };
+            };
+            ?>
             <p class="mainHeader__smallText">Cała potęga wiedzy</p>
             <h3 class="mainHeader__title">Tania literatura. <br /> Bezcenna wiedza.</h3>
             <p class="mainHeader__text">Wierzymy, że to właśnie wiedza jest tym, co pozwoliło człowiekowi wyewoluować i przetrwać tyle setek tysięcy lat. Dzisiaj, w cywilizacji wysokich technologii wiedza jest podstawowym fundamentem nie tylko sukcesu życiowego, ale w ogóle skutecznego funkcjonowania. Dzięki wiedzy zawartej w książkach naszej księgarni każdy człowiek może opanować najbardziej skomplikowane mechanizmy i czuć się w naszej cyfrowej rzeczywistości, jak ryba w wodzie.</p>
@@ -68,11 +77,12 @@ echo substr($filename, 0, -4);
             if($ile_ksiazek>0) {
                 $i=0;
                 while ($wiersz = $rezultat->fetch_object()) {
-                    echo "<a class='sending'><div class='content__items' id='content".$wiersz->idksiazki."' >";
+                    echo "<div class='content__items' id='content".$wiersz->idksiazki."' ><a class='sending'><div class='tooltip'>";
+                    echo "<span class='tooltip__text'>Dodaj do koszyka</span></div></a>";
                     echo "<h4 class='content__bookAuthor' name='autor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
                     echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
                     echo "<p class='content__bookTitle' name='tytul'>".$wiersz->tytul."</p>";
-                    echo "</div></a>";
+                    echo "</div>";
                     $i++;
                     if ($i > 3) {
                     break;
@@ -122,11 +132,12 @@ else {
         if($ile_ksiazek>0) {
             $i=0;
             while ($wiersz = $rezultat->fetch_object()) {
-                echo "<a class='sending'><div class='content__items' id='content".$wiersz->idksiazki."' >";
+                echo "<div class='content__items' id='content".$wiersz->idksiazki."' ><a class='sending'><div class='tooltip'>";
+                echo "<span class='tooltip__text'>Dodaj do koszyka</span></div></a>";
                 echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
                 echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
                 echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
-                echo "</div></a>";
+                echo "</div>";
                 $i++;
                 if ($i > 3) {
                     break;
@@ -177,11 +188,12 @@ else {
         if($ile_ksiazek>0) {
             $i=0;
             while ($wiersz = $rezultat->fetch_object()) {
-                echo "<a class='sending'><div class='content__items' id='content".$wiersz->idksiazki."' >";
+                echo "<div class='content__items' id='content".$wiersz->idksiazki."' ><a class='sending'><div class='tooltip'>";
+                echo "<span class='tooltip__text'>Dodaj do koszyka</span></div></a>";
                 echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
                 echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
                 echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
-                echo "</div></a>";
+                echo "</div>";
                 $i++;
                 if ($i > 3) {
                 break;
@@ -231,11 +243,12 @@ else {
         if($ile_ksiazek>0) {
             $i=0;
             while ($wiersz = $rezultat->fetch_object()) {
-                echo "<a class='sending'><div class='content__items' id='content".$wiersz->idksiazki."' >";
+                echo "<div class='content__items' id='content".$wiersz->idksiazki."' ><a class='sending'><div class='tooltip'>";
+                echo "<span class='tooltip__text'>Dodaj do koszyka</span></div></a>";
                 echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
                 echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
                 echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
-                echo "</div></a>";
+                echo "</div>";
                 $i++;
                 if ($i > 3) {
                 break;
