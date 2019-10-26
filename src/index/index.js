@@ -10,21 +10,24 @@ bannerPos = document.querySelector("#banner").offsetTop,
 hamburger = document.querySelector("#hamburger"),
 submenu = document.querySelector("#submenu"),
 menu = document.querySelector(".hamburger"),
-ksiazki = document.querySelectorAll(".content__items");
+ksiazki = document.querySelectorAll(".sending>.tooltip");
 
 
 
 function addToBucketReady(){
     let login = document.querySelector(".loginText");
     let click = 0;
+
     function addToBucket(){
         click++;
-        let autorKsiazki = this.children[0].innerHTML;
-        let tytulKsiazki = this.children[2].innerHTML;
+        let autorKsiazki = this.parentNode.parentNode.children[1].innerHTML;
+        let tytulKsiazki = this.parentNode.parentNode.children[3].innerHTML;
         let pozycja = {
             autor: autorKsiazki,
             tytul: tytulKsiazki
         }
+        console.log(autorKsiazki);
+        console.log(tytulKsiazki);
         this.parentNode.setAttribute("href", "http://localhost/stronnica/basketItem.php?autor="+pozycja.autor+"&tytul="+pozycja.tytul);
         let pozycjaJSON = JSON.stringify(pozycja);
         let nowy = JSON.parse(pozycjaJSON);
@@ -32,12 +35,23 @@ function addToBucketReady(){
     function loginAlert() {
         alert ("Musisz byc zalogowany, by dodac ksiazke do koszyka");
     }
-    ksiazki.forEach(ksiozka =>{
+    ksiazki.forEach(function(ksiozka){
         if (login != null){
-                   ksiozka.addEventListener("click", addToBucket);
+            ksiozka.addEventListener("click", addToBucket);
+            if (window.innerWidth < 768){
+                ksiozka.parentNode.parentNode.addEventListener("click", function() {
+                    if(this.children[0].children[0].classList.contains("tooltip--active")){
+                        this.children[0].children[0].classList.remove("tooltip--active");
+                    } else {
+                        this.children[0].children[0].classList.add("tooltip--active");
+                }
+                    console.log(this);
+            });
+            }
         } else {
             ksiozka.addEventListener("click", loginAlert);
         }
+
                      });
 }
 function menuFixed() {

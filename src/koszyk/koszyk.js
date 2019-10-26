@@ -19,13 +19,10 @@ function countingValue(){
         sum += rowValue;
     }
     result.innerHTML = sum;
-    console.log(books);
     let deliveryCost = (books/3)*15;
     deliveryCost = Math.round(deliveryCost);
     deliver.innerHTML = deliveryCost+" zł";
     deliver2.innerHTM = deliveryCost+" zł";
-
-
 }
 
 function countingItems(){
@@ -51,7 +48,7 @@ function countingItems(){
                if(el.getAttribute("data-ilość")==null){
                    el.setAttribute("data-ilość", 1);
                }
-           }) 
+           })
         }
         tytuly = document.querySelectorAll(".fullBucket__row");
         for (let i=1; i<tytuly.length; i++){
@@ -61,14 +58,67 @@ function countingItems(){
         }
         countingValue();
 }
-
+function removingItems(){
+    const removingButtons = document.querySelectorAll(".remove__item");
+    async function updateBasket(el, pozycja, ilosc){
+        if (ilosc == 0){
+            try {
+                el.setAttribute("href", "http://localhost/stronnica/removeItem.php?autor="+pozycja.autor+"&tytul="+pozycja.tytul+"&ilosc=0");
+                location.href = el.getAttribute('href');
+            } catch(e){
+            console.log("Błąd w którejś obietnicy!");
+            }
+        } else {
+            try {
+                el.setAttribute("href", "http://localhost/stronnica/removeItem.php?autor="+pozycja.autor+"&tytul="+pozycja.tytul+"&ilosc="+ilosc);
+                location.href = el.getAttribute('href');
+            } catch(e){
+                console.log("Błąd w którejś obietnicy!");
+            }
+        }
+    }
+    removingButtons.forEach(el => {
+        let tekst = el.parentNode.parentNode.children[0].innerHTML;
+        let ksiozka = tekst.replace("<br>", "|");
+        ksiozka = ksiozka.split("|")
+        let tytul = ksiozka[0];
+        let autor = ksiozka[1];
+        let ilosc = ksiozka[2];
+        let Pozycja = {
+            autor: autor,
+            tytul: tytul,
+            ilosc: ilosc
+        };
+        let item = el;
+        el.setAttribute('href', "http://localhost/stronnica/removeItem.php?autor="+Pozycja.autor+"&tytul="+Pozycja.tytul+"&ilosc="+Pozycja.ilosc);
+        el.addEventListener("click", function removeItem(el){
+            el.preventDefault();
+            console.log(Pozycja.tytul);
+            console.log(Pozycja.autor);
+             let PozycjaJSON = JSON.stringify(Pozycja);
+            if (this.parentNode.parentNode.getAttribute("data-ilość")>1){
+                let staraIlosc = this.parentNode.parentNode.getAttribute("data-ilość");
+                console.log(staraIlosc);
+                let nowaIlosc = staraIlosc - 1;
+                this.parentNode.parentNode.setAttribute("data-ilość", nowaIlosc);
+                this.parentNode.parentNode.children[2].innerHTML = nowaIlosc;
+                updateBasket(item, Pozycja, nowaIlosc);
+                this.setAttribute("href", "http://localhost/stronnica/removeItem.php?autor="+Pozycja.autor+"&tytul="+Pozycja.tytul+"&ilosc="+nowaIlosc);
+                location.href = this.getAttribute('href');
+            } else {
+            this.parentNode.parentNode.remove();
+            updateBasket(item, Pozycja, 0);
+            }
+        });
+    });
+}
 function menuFixed() {
    const menu = document.querySelector("#menu"),
    logo = document.querySelector("#logo");
    if (window.pageYOffset > 0) {
        menu.classList.add("menu--sticky");
        logo.classList.add("sticky--logo");
-       
+
    } else {
        menu.classList.remove("menu--sticky");
        logo.classList.remove("sticky--logo");
@@ -113,3 +163,4 @@ document.addEventListener("scroll", menuFixed);
 window.addEventListener("resize", menuFixed);
 submenu.addEventListener("click", listener);
 window.addEventListener("DOMContentLoaded", countingItems);
+window.addEventListener("DOMContentLoaded", removingItems);
