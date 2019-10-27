@@ -7,7 +7,6 @@ mathPos = document.querySelector("#math").offsetTop,
 physicPos = document.querySelector("#physic").offsetTop,
 engineringPos = document.querySelector("#enginering").offsetTop,
 bannerPos = document.querySelector("#banner").offsetTop,
-hamburger = document.querySelector("#hamburger"),
 submenu = document.querySelector("#submenu"),
 menu = document.querySelector(".hamburger"),
 ksiazki = document.querySelectorAll(".sending>.tooltip");
@@ -33,7 +32,7 @@ function addToBucketReady(){
         let nowy = JSON.parse(pozycjaJSON);
     }
     function loginAlert() {
-        alert ("Musisz byc zalogowany, by dodac ksiazke do koszyka");
+        alert ("Musisz byc zalogowany, by dodac ksiazke do koszyka.");
     }
     ksiazki.forEach(function(ksiozka){
         if (login != null){
@@ -45,15 +44,23 @@ function addToBucketReady(){
                     } else {
                         this.children[0].children[0].classList.add("tooltip--active");
                 }
-                    console.log(this);
             });
             }
         } else {
             ksiozka.addEventListener("click", loginAlert);
+            if (window.innerWidth < 768){
+                ksiozka.parentNode.parentNode.addEventListener("click", function() {
+                    if(this.children[0].children[0].classList.contains("tooltip--active")){
+                        this.children[0].children[0].classList.remove("tooltip--active");
+                    } else {
+                        this.children[0].children[0].classList.add("tooltip--active");
+                }
+            });
         }
-
-                     });
+    }
+});
 }
+
 function menuFixed() {
    const menu = document.querySelector("#menu"),
    logo = document.querySelector("#logo");
@@ -101,7 +108,7 @@ function categoryFixed() {
         } else return
     }
 }
-var calculateX = function () {
+function calculateX() {
     if (window.innerWidth < 800) {
         let x = 300;
         return x;
@@ -179,3 +186,4 @@ window.addEventListener("resize", categoryFixed);
 document.addEventListener("scroll", categoryActive);
 submenu.addEventListener("click", listener);
 window.addEventListener("DOMContentLoaded", addToBucketReady)
+window.addEventListener("resize", addToBucketReady);
