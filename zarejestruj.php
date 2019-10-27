@@ -10,7 +10,7 @@ if (isset($_POST['email'])) {
     $wszystko_OK=true;
 
     // Zmienne z formularza
-    
+
     $name = $_POST['name'];
     $adres = $_POST['adres'];
     $miasto = $_POST['city'];
@@ -19,7 +19,7 @@ if (isset($_POST['email'])) {
     $haslo2 = $_POST['password2'];
 
     // Sprawdzenie długości imienia i nazwiska
-    if ((strlen($name)<5) || (strlen($name)>25)) {
+    if ((strlen($name)<2) || (strlen($name)>25)) {
         $wszystko_OK=false;
         $_SESSION['e_name']="Nieprawidłowe imię i nazwisko";
 
@@ -29,7 +29,7 @@ if (isset($_POST['email'])) {
         $_SESSION['e_name']="Nieprawidłowe imię i nazwisko";
     }
 
-    //Sprawdzenie miasta 
+    //Sprawdzenie miasta
 
      if ((strlen($miasto)<3) || (strlen($miasto)>15)){
         $wszystko_OK=false;
@@ -37,10 +37,10 @@ if (isset($_POST['email'])) {
     }
 
     //Sprawdzenie adresu
-    if ((strlen($adres)<10) || (strlen($adres)>40)){
+    if ((strlen($adres)<5) || (strlen($adres)>40)){
         $wszystko_OK=false;
         $_SESSION['e_adres']="Wprowadzono nieprawidłowy adres";
-    } 
+    }
 
     // Sprawdzenie maila
 
@@ -59,7 +59,7 @@ if (isset($_POST['email'])) {
     } elseif (!preg_match('/^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/', $email)) {
         $wszystko_OK=false;
         $_SESSION['e_mail']="Nieprawidłowy adres e-mail";
-    } 
+    }
 
     // Sprawdzenie długości hasła
     if((strlen($haslo1)<6) || (strlen($haslo1)>25)) {
@@ -78,20 +78,20 @@ if (isset($_POST['email'])) {
     // Sprawdzenie zgody na regulamin
     if (!isset($_POST['rules'])){
         $_SESSION['e_rules']="Proszę wyrazić zgodę na regulamin";
-    } 
+    }
 
     // Sprawdzenie recaptcha
 
     $sekret = "6Le1wLkUAAAAALzXhWAX9rEPwyrM1mNWDOvRgbuK";
-    
+
     $recaptcha = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
-    
+
     $odpowiedz = json_decode($recaptcha);
     $_SESSION['answer'] = $odpowiedz->success;
 
     if($odpowiedz->success == false) {
         $wszystko_OK=false;
-            $_SESSION['e_recaptcha']="Proszę przejść test turinga"; 
+            $_SESSION['e_recaptcha']="Proszę przejść test turinga";
     }
     // Otworzenie połączenia
     require_once "connect.php";
@@ -121,14 +121,14 @@ if (isset($_POST['email'])) {
                 $imie = $imieINazwisko[0];
                 $nazwisko = $imieINazwisko[1];
 
-                if($polaczenie->query("INSERT INTO klienci VALUES (NULL, '$imie', '$nazwisko', '$miasto', '$email', '$haslo_hash')")){
+                if($polaczenie->query("INSERT INTO klienci(`idklienta`, `imie`, `nazwisko`, `miejscowosc`, `email`, `haslo`, `Avatar`) VALUES (NULL, '$imie', '$nazwisko', '$miasto', '$email', '$haslo_hash', 'human.png')")){
                     $_SESSION['udanarejestracja']=true;
                     Header('Location: welcome.php');
                 } else {
                     unset($_SESSION['udanarejestracja']);
                     throw new Exception($polaczenie->error);
                 }
-        
+
                 //Hurra, wszystkie testy zaliczone, dodajemy gracza do bazy
             }
             $polaczenie->close();

@@ -16,7 +16,8 @@ module.exports = {
     main: './src/main/main.js',
     user: './src/user/user.js',
     index: './src/index/index.js',
-    welcome: './src/welcome/welcome.js'
+    welcome: './src/welcome/welcome.js',
+    profile: './src/profile/profile.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -34,8 +35,8 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [ 'style-loader', 
-        MiniCssExtractPlugin.loader, 
+        use: [ 'style-loader',
+        MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
           options: {

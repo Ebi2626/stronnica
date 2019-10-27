@@ -25,7 +25,6 @@ echo substr($filename, 0, -4);
             ?>
              <?php
             if (isset($_SESSION['w_koszyku'])){
-                echo "Jest w koszyku";
                 if ($_SESSION['w_koszyku'] == 1){
                 echo "<p class='slide slide--active'>Dodano do koszyka</p>";
                 $_SESSION['w_koszyku']++;
