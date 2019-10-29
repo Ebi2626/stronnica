@@ -7,7 +7,7 @@
 <ul class="user__options">
 <a href="story.php"><li class="user__option">Historia zamówień
 </li></a>
-<a href="order.php"><li class="user__option">Śledź zamówienie
+<a href="track.php"><li class="user__option">Śledź zamówienie
 </li></a>
 <a href="profile.php"><li class="user__option">Edytuj profil
 </li></a>
