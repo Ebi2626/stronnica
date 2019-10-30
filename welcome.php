@@ -1,5 +1,5 @@
 <?php
-if($_SESSION['udanarejestracja']!=true){
+if($_SESSION['udanarejestracja']=false){
   header('Location: zarejestruj.php');
 }
 ?>
@@ -17,11 +17,11 @@ echo substr($filename, 0, -4);
 </head>
 <body>
 <header class="mainHeader">
-    <?php 
+    <?php
     require("nav.php");
     ?>
         <div class="welcome__box" id="welcome__box">
-            <?php 
+            <?php
             if (isset($_SESSION['pass'])){
                 if ($_SESSION['refreshing'] < 1){
                 echo "<p class='slide slide--active'>Zalogowano pomyślnie</p>";
@@ -77,6 +77,6 @@ require("footer.php")
     echo substr($filename, 0, -4);
     ?>.bundle.js"></script>
 </body>
-<?php 
+<?php
 unset($_SESSION['udanarejestracja']);
 ?>

@@ -13,7 +13,7 @@ if ((isset($_POST['email'])) && (isset($_POST['password']))) {
     else {
         $email = $_POST['email'];
         $password = $_POST['password'];
-        
+
         $email = htmlentities($email, ENT_QUOTES, "UTF-8");
 
         $sql = sprintf("SELECT * FROM klienci WHERE email='%s'", mysqli_real_escape_string($polaczenie,$email));
@@ -24,14 +24,17 @@ if ((isset($_POST['email'])) && (isset($_POST['password']))) {
                 if(password_verify($password, $wiersz['haslo'])){
                     $_SESSION['imie'] = $wiersz['imie'];
                     $_SESSION['nazwisko'] = $wiersz['nazwisko'];
+                    $_SESSION['miasto'] = $wiersz['miejscowosc'];
+                    $_SESSION['adres'] = $wiersz['miejscowosc'];
                     $_SESSION['user'] = $wiersz['email'];
+                    $_SESSION['id'] = $wiersz['idklienta'];
                     $_SESSION['pass'] = 'true';
                     $_SESSION['refreshing'] = 0;
                     if(isset($_SESSION['nopass'])){
                         unset($_SESSION['nopass']);
                     }
                     $rezultat->close();
-                
+
                     header('Location: index.php');
                 } else {
                     $_SESSION['e_password'] = "<p class='nopass'>Nieprawidłowe hasło!</p>";
@@ -39,7 +42,7 @@ if ((isset($_POST['email'])) && (isset($_POST['password']))) {
                     header('Location: zaloguj.php');
                 }
 
-            } else {     
+            } else {
                 $_SESSION['e_password'] = "<p class='nopass'>Nieprawidłowy login lub hasło!</p>";
                 header('Location: zaloguj.php');
             }

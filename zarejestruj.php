@@ -122,7 +122,7 @@ if (isset($_POST['email'])) {
                 $nazwisko = $imieINazwisko[1];
 
                 if($polaczenie->query("INSERT INTO klienci(`idklienta`, `imie`, `nazwisko`, `miejscowosc`, `email`, `haslo`, `Avatar`) VALUES (NULL, '$imie', '$nazwisko', '$miasto', '$email', '$haslo_hash', 'human.png')")){
-                    $_SESSION['udanarejestracja']=true;
+                    $_SESSION['udanarejestracja'] = true;
                     Header('Location: welcome.php');
                 } else {
                     unset($_SESSION['udanarejestracja']);
