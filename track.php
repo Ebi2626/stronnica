@@ -6,67 +6,20 @@ if(!isset($_SESSION['user'])){
     echo "<script type='text/javascript'>window.alert('By korzystać z koszyka musisz być zalogowany');
     location.href='zaloguj.php';</script>";
 };
-if(!isset($_SESSION['step'])){
-    $_SESSION['step'] = 1;
-    $step = $_SESSION['step'];
-}
 ?>
-
 <link rel="stylesheet" href="./dist/<?php
 
 $filename = basename(__FILE__);
 echo substr($filename, 0, -4);
 
 ?>.bundle.css" />
-<title>Stronnica - Koszyk</title>
-<?php
-   $userMail = $_SESSION['user'];
-   $prawieUser = explode("@",$userMail);
-   $user = $prawieUser[0];
-   $userFile = "orders/".$user.".json";
-?>
+<title>Stronnica - Zamówienie</title>
 </head>
-<body><?php
-
-?>
+<body>
 <header class="mainHeader"><?php
 require("nav.php");
 ?>
-    <div class="bucket">
-        <aside class="bucket__instruction">
-        <?php if(isset($_SESSION['bucket_response'])){
-            echo $_SESSION['bucket_response']."<br/>";
-            echo $_SESSION['step']."<br/>";
-        }?>
-            <ul class="bucket__list">
-                <li class="bucket__step <?php if($_SESSION['step'] === 1){echo "step--active";}?>">
-                    <h4 class="bucket__stepTitle">Krok 1/4</h4>
-                    <p class="bucket__stepDescription">Wybór produktów</p>
-                </li>
-                <li class="bucket__step <?php if((file_exists($userFile)) && ($_SESSION['step'] === 2)){echo "step--active";}?>">
-                    <h4 class="bucket__stepTitle">Krok 2/4</h4>
-                    <p class="bucket__stepDescription">Wybór metody płatności i dostawy</p>
-                </li>
-                <li class="bucket__step <?php if((isset($_SESSION['payment'])) && ($_SESSION['step'] === 3)){echo "step--active";}?>">
-                    <h4 class="bucket__stepTitle">Krok 3/4</h4>
-                    <p class="bucket__stepDescription">Potwierdzenie danych teleadresowych</p>
-                </li>
-                <li class="bucket__step <?php if(isset($_SESSION['adress_data']) && ($_SESSION['step'] === 4)){echo "step--active";}?>">
-                    <h4 class="bucket__stepTitle">Krok 4/4</h4>
-                    <p class="bucket__stepDescription">Potwierdzenie zamówienia</p>
-                </li>
-            </ul>
-            <div class="securityGuarantee">
-                <p class="securityGuarantee__text">100% Bezpieczeństwa <i class="fa fa-shield"></i> </p>
-            </div>
-        </aside>
-        <div class="bucket__content">
-        <?php
-                require ('fullBucket.php');
-            ?>
-        </div>
-    </div>
-    </header>
+</header>
     <div class="banner" id="banner">
         <div class="banner__content">
             <img src="./src/img/ml.jpg" alt="matematyka" class="banner__img">

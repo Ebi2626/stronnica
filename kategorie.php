@@ -46,6 +46,7 @@ include("nav.php")
      echo "Error: ".$polaczenie->connect_errno;
  }
  else {
+    $polaczenie -> query("SET NAMES 'utf8'");
      $sql = "SELECT * FROM ksiazki WHERE gatunek='Informatyka'";
      if ($rezultat = @$polaczenie->query($sql)){
          $ile_ksiazek = $rezultat->num_rows;
@@ -74,6 +75,7 @@ if($polaczenie->connect_errno!=0) {
   echo "Error: ".$polaczenie->connect_errno;
 }
 else {
+    $polaczenie -> query("SET NAMES 'utf8'");
   $sql = "SELECT * FROM ksiazki WHERE gatunek='Matematyka'";
   if ($rezultat = @$polaczenie->query($sql)){
       $ile_ksiazek = $rezultat->num_rows;
@@ -102,6 +104,7 @@ if($polaczenie->connect_errno!=0) {
   echo "Error: ".$polaczenie->connect_errno;
 }
 else {
+    $polaczenie -> query("SET NAMES 'utf8'");
   $sql = "SELECT * FROM ksiazki WHERE gatunek='Fizyka'";
   if ($rezultat = @$polaczenie->query($sql)){
       $ile_ksiazek = $rezultat->num_rows;
@@ -131,6 +134,7 @@ if($polaczenie->connect_errno!=0) {
   echo "Error: ".$polaczenie->connect_errno;
 }
 else {
+    $polaczenie -> query("SET NAMES 'utf8'");
   $sql = "SELECT * FROM ksiazki WHERE gatunek='Inzynieria'";
   if ($rezultat = @$polaczenie->query($sql)){
       $ile_ksiazek = $rezultat->num_rows;

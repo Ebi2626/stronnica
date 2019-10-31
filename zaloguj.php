@@ -23,7 +23,7 @@ echo substr($filename, 0, -4);
 include("nav.php");
 ?>
 <aside class="aside">
-<form class="login" action="login.php" method="post">
+<form class="login" action="login.php" method="post" autocomplete="on">
 <header class="login__header">
 <h2>Zaloguj się</h2>
 <p>I w pełni korzystaj z naszych usług</p>
