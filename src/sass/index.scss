@@ -33,6 +33,36 @@
         font-size: 18px;
     }
 }
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    top: 20px;
+    width: 115px;
+    height: 45px;
+    opacity: 0;
+    transition: all .3s linear;
+}
+.tooltip--active {
+    position: absolute;
+    top: 20px;
+    width: 115px;
+    height: 45px;
+    visibility: visible;
+    background-color: wheat !important;
+    justify-content: center;
+    padding: 5px;
+    border: solid 1px rgb(133, 117, 117);
+    text-align: center;
+    margin-left: calc(30% - 115px);
+    border-radius: 5px;
+    opacity: 1;
+    &__text {
+        position: relative;
+        width: 80px;
+        font-size: 14px;
+        text-align: center;
+}
+}
 .menu--sticky {
     position: fixed !important;
 }
@@ -83,6 +113,7 @@
                 row-gap: 10px;
                 margin-bottom: 10px;
                 .content__items {
+                    position: relative;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
@@ -107,9 +138,12 @@
 
         }
     }
-
 .category {
     display: none;
+}
+.sending {
+    margin-left: -40%;
+    cursor: pointer;
 }
 .banner {
     position: relative;
@@ -278,8 +312,6 @@
     }
 }
 @media all and (min-width: 768px) {
-
-
     .mainHeader {
         padding: 0px;
         background-image: url("../src/img/books_medium.jpg");
@@ -289,6 +321,33 @@
             padding: 30px;
             width: 600px;
             text-align: left;
+        }
+    }
+    .tooltip {
+        position: absolute;
+        top: 20px;
+        width: 115px;
+        height: 30px;
+        visibility: hidden;
+        background-color: wheat;
+        text-align: center;
+        border-radius: 10px;
+        justify-content: center;
+        padding: 5px;
+        border: solid 1px darkgrey;
+        opacity: 0;
+        transition: all .3s linear;
+        &__text {
+            position: relative;
+            width: 80px;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+    .content__items:hover {
+        .tooltip {
+            visibility: visible;
+            opacity: 1;
         }
     }
     .category {

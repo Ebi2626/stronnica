@@ -7,9 +7,59 @@ mathPos = document.querySelector("#math").offsetTop,
 physicPos = document.querySelector("#physic").offsetTop,
 engineringPos = document.querySelector("#enginering").offsetTop,
 bannerPos = document.querySelector("#banner").offsetTop,
-hamburger = document.querySelector("#hamburger"),
 submenu = document.querySelector("#submenu"),
-menu = document.querySelector(".hamburger");
+menu = document.querySelector(".hamburger"),
+ksiazki = document.querySelectorAll(".sending>.tooltip");
+
+
+
+function addToBucketReady(){
+    let login = document.querySelector(".loginText");
+    let click = 0;
+
+    function addToBucket(){
+        click++;
+        let autorKsiazki = this.parentNode.parentNode.children[1].innerHTML;
+        let tytulKsiazki = this.parentNode.parentNode.children[3].innerHTML;
+        let pozycja = {
+            autor: autorKsiazki,
+            tytul: tytulKsiazki
+        }
+        console.log(autorKsiazki);
+        console.log(tytulKsiazki);
+        this.parentNode.setAttribute("href", "http://localhost/stronnica/basketItem.php?autor="+pozycja.autor+"&tytul="+pozycja.tytul);
+        let pozycjaJSON = JSON.stringify(pozycja);
+        let nowy = JSON.parse(pozycjaJSON);
+    }
+    function loginAlert() {
+        alert ("Musisz byc zalogowany, by dodac ksiazke do koszyka.");
+    }
+    ksiazki.forEach(function(ksiozka){
+        if (login != null){
+            ksiozka.addEventListener("click", addToBucket);
+            if (window.innerWidth < 768){
+                ksiozka.parentNode.parentNode.addEventListener("click", function() {
+                    if(this.children[0].children[0].classList.contains("tooltip--active")){
+                        this.children[0].children[0].classList.remove("tooltip--active");
+                    } else {
+                        this.children[0].children[0].classList.add("tooltip--active");
+                }
+            });
+            }
+        } else {
+            ksiozka.addEventListener("click", loginAlert);
+            if (window.innerWidth < 768){
+                ksiozka.parentNode.parentNode.addEventListener("click", function() {
+                    if(this.children[0].children[0].classList.contains("tooltip--active")){
+                        this.children[0].children[0].classList.remove("tooltip--active");
+                    } else {
+                        this.children[0].children[0].classList.add("tooltip--active");
+                }
+            });
+        }
+    }
+});
+}
 
 function menuFixed() {
    const menu = document.querySelector("#menu"),
@@ -17,7 +67,7 @@ function menuFixed() {
    if (window.pageYOffset > 0) {
        menu.classList.add("menu--sticky");
        logo.classList.add("sticky--logo");
-       
+
    } else {
        menu.classList.remove("menu--sticky");
        logo.classList.remove("sticky--logo");
@@ -46,7 +96,7 @@ function categoryFixed() {
             category.classList.remove("category--fixed");
             logo.classList.remove("logo--smaller");
             logoText.classList.remove("invisible");
-        
+
             } else return
         }
 
@@ -58,8 +108,8 @@ function categoryFixed() {
         } else return
     }
 }
-var calculateX = function () {
-    if (window.innerWidth < 800) { 
+function calculateX() {
+    if (window.innerWidth < 800) {
         let x = 300;
         return x;
     } else {
@@ -93,7 +143,7 @@ function categoryActive() {
         eng.classList.add("category--active");
     } else {
         eng.classList.remove("category--active");
-    };    
+    };
 }
 function mobileMenu() {
     const hamburger = document.querySelector("#hamburger"),
@@ -135,3 +185,5 @@ document.addEventListener("scroll", categoryFixed);
 window.addEventListener("resize", categoryFixed);
 document.addEventListener("scroll", categoryActive);
 submenu.addEventListener("click", listener);
+window.addEventListener("DOMContentLoaded", addToBucketReady)
+window.addEventListener("resize", addToBucketReady);
