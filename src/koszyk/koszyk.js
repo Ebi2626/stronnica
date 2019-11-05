@@ -10,6 +10,7 @@ function countingValue(){
     const deliver = document.querySelector("#deliver");
     const deliver2 = document.querySelector("#deliver2");
     const rows = tableRows.length;
+    const table = document.querySelector("table");
     let sum = 0;
     let books = 0;
     for (let i=1; i<rows+1; i++){
@@ -27,13 +28,16 @@ function countingValue(){
 
 function countingItems(){
     let tytuly = document.querySelectorAll(".fullBucket__row");
-        for (let i=0; i<tytuly.length; i++) {
+        for (let i=1; i<tytuly.length; i++) {
             let item = tytuly[i];
-            let itemContent = item.innerHTML;
+            let itemContent = item.children[0].innerHTML;
             let itemRepeat = 1;
             for (let j=i+1; j<tytuly.length; j++) {
                 let item2 = tytuly[j];
-                let itemContent2 = item2.innerHTML;
+                let itemContent2 = item2.children[0].innerHTML;
+                console.log(itemContent);
+                console.log(itemContent2);
+
                     if (j===i){
                         continue;
                     } else {

@@ -2,7 +2,7 @@ import "../sass/main.scss";
 import "../sass/story.scss";
 
 var submenu = document.querySelector("#submenu"),
-menu = document.querySelector(".hamburger"),
+menu = document.querySelector(".hamburger");
 
 function menuFixed() {
    const menu = document.querySelector("#menu"),
@@ -52,7 +52,6 @@ function listener() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", showCategoryList);
 menu.addEventListener("click", mobileMenu);
 document.addEventListener("scroll", menuFixed);
 window.addEventListener("resize", menuFixed);

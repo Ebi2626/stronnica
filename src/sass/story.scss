@@ -1,0 +1,192 @@
+.mainHeader {
+    position: relative;
+    background-image: url("../src/img/historia_sm.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    background-color: rgba(30,30,30, .7);
+    background-blend-mode: overlay;
+    min-height: 600px;
+    height: auto;
+    padding-bottom: 100px;
+ }
+ .title {
+     display: block;
+     top: 20px;
+     width: 300px;
+     margin: 20px auto;
+     position: relative;
+     text-align: center;
+ }
+ .story {
+     margin: 20px auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     min-width: 200px;
+     max-width: 1200px;
+     width: 80vw;
+     min-height: 200px;
+     text-align: center;
+     color: white;
+     .orders__table {
+         background-color: wheat;
+         color: rgb(33,33,33);
+         box-shadow: 0px 0px 0px 20px wheat;
+         border-radius: 5px;
+         border-collapse: collapse;
+         td, th {
+            border: solid 1px black;
+            padding: 5px;
+            text-align: center;
+         }
+     }
+ }
+
+ .banner {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    background-color: white;
+    width: 100%;
+    &__header {
+        display: flex;
+        flex-direction: column;
+    }
+    &__subtitle {
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+        color: rgb(105, 22, 22);
+    }
+    &__title {
+        font-size: 32px;
+        color:rgb(2, 3, 88);
+        margin-bottom: 20px;
+    }
+    &__button {
+        align-self: center;
+        width: 200px;
+        padding: 10px;
+        border: solid 1px rgb(150,150,150);
+        transition: all .2s ease-in-out;
+        a {
+            color: grey;
+        }
+        &:hover {
+         background-color: rgb(18, 41, 71);
+         a {
+            color: white;
+         }
+        }
+    }
+    &__content:nth-child(2) {
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    &__content:nth-child(1), &__content:nth-child(3) {
+        display: none;
+    }
+}
+.newsletter {
+    background-color: rgb(18, 41, 71);
+    height: 300px;
+    display: flex;
+    padding: 10px 2vw;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__header {
+        width: 90%;
+        margin-bottom: 20px;
+       .newsletter__title, .newsletter__subtitle {
+           color: white;
+           margin-bottom: 20px;
+       }
+       .newsletter__title {
+           font-size: 18px;
+       }
+       .newsletter__subtitle {
+           font-size: 14px;
+       }
+    }
+    &__saver {
+        position: relative;
+        width: 90%;
+        .newsletter__input {
+            position: relative;
+            width: 80%;
+            border: none;
+            border-bottom: solid 1px rgb(185, 185, 185);
+            background-color: transparent;
+            &[placeholder]{
+                color: rgb(185, 185, 185);
+            }
+        }
+        .newsletter__submit {
+            position: relative;
+            left: 10px;
+            top: 5px;
+            background-color: transparent;
+            border: none;
+            width: 0px;
+            height: 0px;
+            border-top: 4px solid transparent;
+            border-left: 17px solid #fff;
+            border-bottom: 4px solid transparent;
+            &:before {
+                position: absolute;
+                top: 5px;
+                left: 2px;
+                content: "";
+                height: 1px;
+                width: 10px;
+                background-color: white !important;
+            }
+        }
+    }
+}
+@media all and (min-width: 768px){
+    .mainHeader {background-image: url("../src/img/historia_md.jpg");
+    }
+    .banner {
+        &__content:nth-child(2) {
+            display: flex;
+            width: 33.3vw;
+            max-width: 33.3vw;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        &__content:nth-child(1), &__content:nth-child(3) {
+            display: flex;
+            position: relative;
+            width: 33.3vw;
+            flex-wrap:wrap;
+        }
+        &__img {
+            position: relative;
+            padding:0px;
+            border: 0px;
+            width: 50%;
+            height: 200px;
+        }
+    }
+    .newsletter {
+        padding: 0 30px;
+        flex-direction: row;
+        &__header, &__saver {
+            width: 50%;
+        }
+    }
+}
+@media all and (min-width: 1024px){
+    .mainHeader {background-image: url("../src/img/historia_lg.jpg");
+    }
+}
