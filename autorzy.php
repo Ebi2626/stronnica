@@ -44,7 +44,7 @@ include("nav.php")
     }
     else {
         $polaczenie -> query("SET NAMES 'utf8'");
-        $sql = "SELECT * FROM ksiazki";
+        $sql = "SELECT * FROM ksiazki ORDER BY `nazwiskoautora`";
         if ($rezultat = @$polaczenie->query($sql)){
             $ile_ksiazek = $rezultat->num_rows;
             if($ile_ksiazek>0) {

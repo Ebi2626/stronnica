@@ -3,22 +3,36 @@ require('head.php');
 ?>
 <?php
 if(!isset($_SESSION['user'])){
-    echo "<script type='text/javascript'>window.alert('By korzystać z koszyka musisz być zalogowany');
+    echo "<script type='text/javascript'>window.alert('By korzystać ze śledzenia zamówień musisz być zalogowany');
     location.href='zaloguj.php';</script>";
 };
 ?>
 <link rel="stylesheet" href="./dist/<?php
 
 $filename = basename(__FILE__);
-echo substr($filename, 0, -4);
+$filename = substr($filename, 0, -4);
+echo $filename;
 
 ?>.bundle.css" />
-<title>Stronnica - Zamówienie</title>
+<title>Stronnica - Śledź zamówienie</title>
 </head>
 <body>
 <header class="mainHeader"><?php
 require("nav.php");
 ?>
+<h1 class="title">Śledź zamówienie</h1>
+<div class="track">
+<?php 
+    require("trackOrders.php");
+    ?>
+    <?php
+    if(isset($_SESSION['orders'])){
+        if ($_SESSION['orders'] == 0){
+            echo "<p class='no__orders'>Nie ma żadnych zrealizowanych zamówień</p>";
+        }
+    }
+?>
+</div>
 </header>
     <div class="banner" id="banner">
         <div class="banner__content">

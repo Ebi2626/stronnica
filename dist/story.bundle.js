@@ -81,21 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/story/story.js");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/index.scss":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js!./src/sass/index.scss ***!
-  \************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/sass/index.scss?./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js");
-
-/***/ }),
 
 /***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/main.scss":
 /*!***********************************************************************************************************************************************************************************************************!*\
@@ -105,6 +94,17 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/sass/main.scss?./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/story.scss":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js!./src/sass/story.scss ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/sass/story.scss?./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--5-2!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -130,29 +130,6 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
-/***/ "./src/index/index.js":
-/*!****************************!*\
-  !*** ./src/index/index.js ***!
-  \****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/index.scss */ \"./src/sass/index.scss\");\n/* harmony import */ var _sass_index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_index_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar categoryPos = document.querySelector(\"#category\").offsetTop,\n    itPos = document.querySelector(\"#it\").offsetTop,\n    mathPos = document.querySelector(\"#math\").offsetTop,\n    physicPos = document.querySelector(\"#physic\").offsetTop,\n    engineringPos = document.querySelector(\"#enginering\").offsetTop,\n    bannerPos = document.querySelector(\"#banner\").offsetTop,\n    submenu = document.querySelector(\"#submenu\"),\n    menu = document.querySelector(\".hamburger\"),\n    ksiazki = document.querySelectorAll(\".sending>.tooltip\");\n\nfunction addToBucketReady() {\n  let login = document.querySelector(\".loginText\");\n  let click = 0;\n\n  function addToBucket() {\n    click++;\n    let autorKsiazki = this.parentNode.parentNode.children[1].innerHTML;\n    let tytulKsiazki = this.parentNode.parentNode.children[3].innerHTML;\n    let pozycja = {\n      autor: autorKsiazki,\n      tytul: tytulKsiazki\n    };\n    console.log(autorKsiazki);\n    console.log(tytulKsiazki);\n    this.parentNode.setAttribute(\"href\", \"http://localhost/stronnica/basketItem.php?autor=\" + pozycja.autor + \"&tytul=\" + pozycja.tytul);\n    let pozycjaJSON = JSON.stringify(pozycja);\n    let nowy = JSON.parse(pozycjaJSON);\n  }\n\n  function loginAlert() {\n    alert(\"Musisz byc zalogowany, by dodac ksiazke do koszyka.\");\n  }\n\n  ksiazki.forEach(function (ksiozka) {\n    if (login != null) {\n      ksiozka.addEventListener(\"click\", addToBucket);\n\n      if (window.innerWidth < 768) {\n        ksiozka.parentNode.parentNode.addEventListener(\"click\", function () {\n          if (this.children[0].children[0].classList.contains(\"tooltip--active\")) {\n            this.children[0].children[0].classList.remove(\"tooltip--active\");\n          } else {\n            this.children[0].children[0].classList.add(\"tooltip--active\");\n          }\n        });\n      }\n    } else {\n      ksiozka.addEventListener(\"click\", loginAlert);\n\n      if (window.innerWidth < 768) {\n        ksiozka.parentNode.parentNode.addEventListener(\"click\", function () {\n          if (this.children[0].children[0].classList.contains(\"tooltip--active\")) {\n            this.children[0].children[0].classList.remove(\"tooltip--active\");\n          } else {\n            this.children[0].children[0].classList.add(\"tooltip--active\");\n          }\n        });\n      }\n    }\n  });\n}\n\nfunction menuFixed() {\n  const menu = document.querySelector(\"#menu\"),\n        logo = document.querySelector(\"#logo\");\n\n  if (window.pageYOffset > 0) {\n    menu.classList.add(\"menu--sticky\");\n    logo.classList.add(\"sticky--logo\");\n  } else {\n    menu.classList.remove(\"menu--sticky\");\n    logo.classList.remove(\"sticky--logo\");\n  }\n}\n\nfunction categoryFixed() {\n  const category = document.querySelector(\"#category\"),\n        menu = document.querySelector(\"#menu\"),\n        logoText = document.querySelector(\".logo__text\"),\n        logo = document.querySelector(\"#logo\");\n  let menuHeight = menu.clientHeight;\n\n  if (window.innerWidth > 767) {\n    if (categoryPos <= window.pageYOffset + menuHeight) {\n      category.classList.add(\"category--fixed\");\n      logo.classList.add(\"logo--smaller\");\n      logoText.classList.add(\"invisible\");\n\n      if (window.pageYOffset >= bannerPos - 250) {\n        category.classList.add(\"invisible\");\n      } else if (category.classList.contains(\"invisible\")) {\n        category.classList.remove(\"invisible\");\n      } else return;\n    } else {\n      if (category.classList.contains(\"category--fixed\")) {\n        category.classList.remove(\"category--fixed\");\n        logo.classList.remove(\"logo--smaller\");\n        logoText.classList.remove(\"invisible\");\n      } else return;\n    }\n  } else {\n    if (category.classList.contains(\"category--fixed\")) {\n      category.classList.remove(\"category--fixed\");\n      logo.classList.remove(\"logo--smaller\");\n      logoText.classList.remove(\"invisible\");\n    } else return;\n  }\n}\n\nfunction calculateX() {\n  if (window.innerWidth < 800) {\n    let x = 300;\n    return x;\n  } else {\n    let x = 350;\n    return x;\n  }\n}\n\n;\n\nfunction categoryActive() {\n  const it = document.querySelector(\"#c1\"),\n        math = document.querySelector(\"#c2\"),\n        physic = document.querySelector(\"#c3\"),\n        eng = document.querySelector(\"#c4\");\n  let screenPos = window.pageYOffset;\n  calculateX();\n\n  if (screenPos >= itPos - calculateX() && screenPos < mathPos - calculateX()) {\n    it.classList.add(\"category--active\");\n  } else {\n    it.classList.remove(\"category--active\");\n  }\n\n  ;\n\n  if (screenPos >= mathPos - calculateX() && screenPos < physicPos - calculateX()) {\n    math.classList.add(\"category--active\");\n  } else {\n    math.classList.remove(\"category--active\");\n  }\n\n  ;\n\n  if (screenPos >= physicPos - calculateX() && screenPos < engineringPos - calculateX()) {\n    physic.classList.add(\"category--active\");\n  } else {\n    physic.classList.remove(\"category--active\");\n  }\n\n  ;\n\n  if (screenPos >= engineringPos - calculateX() && screenPos < bannerPos - calculateX()) {\n    eng.classList.add(\"category--active\");\n  } else {\n    eng.classList.remove(\"category--active\");\n  }\n\n  ;\n}\n\nfunction mobileMenu() {\n  const hamburger = document.querySelector(\"#hamburger\"),\n        submenu = document.querySelector(\"#submenu\"),\n        li = document.querySelectorAll(\".submenu__item\");\n\n  if (window.innerWidth < 756) {\n    if (hamburger.classList.contains(\"hamburger__menu--active\")) {\n      hamburger.classList.remove(\"hamburger__menu--active\");\n      submenu.classList.remove(\"submenu--active\");\n      document.body.style.overflowY = \"auto\";\n      li.forEach(el => {\n        el.removeEventListener('click', listener);\n      });\n    } else {\n      hamburger.classList.add(\"hamburger__menu--active\");\n      submenu.classList.add(\"submenu--active\");\n      document.body.style.overflowY = \"hidden\";\n      li.forEach(el => {\n        el.addEventListener('click', listener);\n      });\n    }\n\n    ;\n  } else return;\n}\n\nfunction listener() {\n  menu.classList.remove(\"hamburger__menu--active\");\n  submenu.classList.remove(\"submenu--active\");\n  document.body.style.overflowY = \"auto\";\n  let li = document.querySelectorAll(\".submenu__item\");\n  li.forEach(el => {\n    el.removeEventListener('click', listener);\n  });\n}\n\nmenu.addEventListener(\"click\", mobileMenu);\ndocument.addEventListener(\"scroll\", menuFixed);\nwindow.addEventListener(\"resize\", menuFixed);\ndocument.addEventListener(\"scroll\", categoryFixed);\nwindow.addEventListener(\"resize\", categoryFixed);\ndocument.addEventListener(\"scroll\", categoryActive);\nsubmenu.addEventListener(\"click\", listener);\nwindow.addEventListener(\"DOMContentLoaded\", addToBucketReady);\nwindow.addEventListener(\"resize\", addToBucketReady);\n\n//# sourceURL=webpack:///./src/index/index.js?");
-
-/***/ }),
-
-/***/ "./src/sass/index.scss":
-/*!*****************************!*\
-  !*** ./src/sass/index.scss ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("\nvar content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js??ref--5-2!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!./index.scss */ \"./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/index.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/sass/index.scss?");
-
-/***/ }),
-
 /***/ "./src/sass/main.scss":
 /*!****************************!*\
   !*** ./src/sass/main.scss ***!
@@ -161,6 +138,29 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/mini-css-extra
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("\nvar content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js??ref--5-2!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!./main.scss */ \"./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/main.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/sass/main.scss?");
+
+/***/ }),
+
+/***/ "./src/sass/story.scss":
+/*!*****************************!*\
+  !*** ./src/sass/story.scss ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js??ref--5-2!../../node_modules/postcss-loader/src!../../node_modules/sass-loader/dist/cjs.js!./story.scss */ \"./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/story.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/sass/story.scss?");
+
+/***/ }),
+
+/***/ "./src/story/story.js":
+/*!****************************!*\
+  !*** ./src/story/story.js ***!
+  \****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sass_story_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sass/story.scss */ \"./src/sass/story.scss\");\n/* harmony import */ var _sass_story_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sass_story_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar submenu = document.querySelector(\"#submenu\"),\n    menu = document.querySelector(\".hamburger\");\n\nfunction menuFixed() {\n  const menu = document.querySelector(\"#menu\"),\n        logo = document.querySelector(\"#logo\");\n\n  if (window.pageYOffset > 0) {\n    menu.classList.add(\"menu--sticky\");\n    logo.classList.add(\"sticky--logo\");\n  } else {\n    menu.classList.remove(\"menu--sticky\");\n    logo.classList.remove(\"sticky--logo\");\n  }\n}\n\nfunction mobileMenu() {\n  const hamburger = document.querySelector(\"#hamburger\"),\n        submenu = document.querySelector(\"#submenu\"),\n        li = document.querySelectorAll(\".submenu__item\");\n\n  if (window.innerWidth < 756) {\n    if (hamburger.classList.contains(\"hamburger__menu--active\")) {\n      hamburger.classList.remove(\"hamburger__menu--active\");\n      submenu.classList.remove(\"submenu--active\");\n      hamburger.classList.remove(\"navy\");\n      document.body.style.overflowY = \"auto\";\n      li.forEach(el => {\n        el.removeEventListener('click', listener);\n      });\n    } else {\n      hamburger.classList.add(\"hamburger__menu--active\");\n      submenu.classList.add(\"submenu--active\");\n      hamburger.classList.add(\"navy\");\n      document.body.style.overflowY = \"hidden\";\n      li.forEach(el => {\n        el.addEventListener('click', listener);\n      });\n    }\n\n    ;\n  } else return;\n}\n\nfunction listener() {\n  menu.classList.remove(\"hamburger__menu--active\");\n  submenu.classList.remove(\"submenu--active\");\n  document.body.style.overflowY = \"auto\";\n  let li = document.querySelectorAll(\".submenu__item\");\n  li.forEach(el => {\n    el.removeEventListener('click', listener);\n  });\n}\n\nmenu.addEventListener(\"click\", mobileMenu);\ndocument.addEventListener(\"scroll\", menuFixed);\nwindow.addEventListener(\"resize\", menuFixed);\nsubmenu.addEventListener(\"click\", listener);\n\n//# sourceURL=webpack:///./src/story/story.js?");
 
 /***/ })
 

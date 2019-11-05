@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 17 Paź 2019, 20:02
--- Wersja serwera: 10.4.6-MariaDB
--- Wersja PHP: 7.3.9
+-- Czas generowania: 05 Lis 2019, 20:29
+-- Wersja serwera: 10.1.37-MariaDB
+-- Wersja PHP: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,7 +47,7 @@ INSERT INTO `klienci` (`idklienta`, `imie`, `nazwisko`, `miejscowosc`, `email`, 
 (2, 'Jan', 'Nowak', 'Katowice', 'jn@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO', 'human.png'),
 (3, 'Maciej', 'Wójcik', 'Bydgoszcz', 'maciejo22@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO', 'human.png'),
 (4, 'Agnieszka', 'Psikuta', 'Lublin', 'apsia@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO', 'human.png'),
-(5, 'Edwin', 'Harmata', 'Kraków', 'edwin.harmata@gmail.com', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO', 'human.png'),
+(5, 'Edwin', 'Harmata', 'Kraków', 'edwin.harmata@gmail.com', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO', 'edwin.harmata_5.jpg'),
 (6, 'Michał', 'Zieliński', 'Kraków', 'zielu34@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO', 'human.png'),
 (7, 'Artur', 'Rutkowski', 'Kielce', 'det.ew@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO', 'human.png'),
 (8, 'Mateusz', 'Skorupa', 'Gdańsk', 'zolw3342@email.pl', '$2y$10$pW/mZXhEBmSKmCPZ3FWIiueCAkkIQOeLLCvNAQ3AREa.ODdlDyNiO', 'human.png'),
@@ -129,7 +129,9 @@ INSERT INTO `zamowienia` (`idzamowienia`, `idklienta`, `idksiazki`, `data`, `sta
 (7, 4, 3, '2018-08-14', 'wyslano'),
 (8, 8, 1, '2018-08-19', 'wyslano'),
 (9, 3, 5, '2018-11-19', 'wyslano'),
-(10, 9, 2, '2018-12-28', 'oczekiwanie');
+(10, 9, 2, '2018-12-28', 'oczekiwanie'),
+(11, 5, 3, '2019-11-04', 'wyslano'),
+(12, 5, 4, '2019-11-04', 'oczekujaca');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -174,7 +176,7 @@ ALTER TABLE `ksiazki`
 -- AUTO_INCREMENT dla tabeli `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `idzamowienia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idzamowienia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

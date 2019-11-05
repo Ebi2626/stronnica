@@ -47,7 +47,7 @@ include("nav.php")
  }
  else {
     $polaczenie -> query("SET NAMES 'utf8'");
-     $sql = "SELECT * FROM ksiazki WHERE gatunek='Informatyka'";
+     $sql = "SELECT * FROM ksiazki WHERE gatunek='Informatyka' ORDER BY `nazwiskoautora`";
      if ($rezultat = @$polaczenie->query($sql)){
          $ile_ksiazek = $rezultat->num_rows;
          if($ile_ksiazek>0) {
@@ -76,7 +76,7 @@ if($polaczenie->connect_errno!=0) {
 }
 else {
     $polaczenie -> query("SET NAMES 'utf8'");
-  $sql = "SELECT * FROM ksiazki WHERE gatunek='Matematyka'";
+  $sql = "SELECT * FROM ksiazki WHERE gatunek='Matematyka' ORDER BY `nazwiskoautora`";
   if ($rezultat = @$polaczenie->query($sql)){
       $ile_ksiazek = $rezultat->num_rows;
       if($ile_ksiazek>0) {
@@ -105,7 +105,7 @@ if($polaczenie->connect_errno!=0) {
 }
 else {
     $polaczenie -> query("SET NAMES 'utf8'");
-  $sql = "SELECT * FROM ksiazki WHERE gatunek='Fizyka'";
+  $sql = "SELECT * FROM ksiazki WHERE gatunek='Fizyka' ORDER BY `nazwiskoautora`";
   if ($rezultat = @$polaczenie->query($sql)){
       $ile_ksiazek = $rezultat->num_rows;
       if($ile_ksiazek>0) {
@@ -135,7 +135,7 @@ if($polaczenie->connect_errno!=0) {
 }
 else {
     $polaczenie -> query("SET NAMES 'utf8'");
-  $sql = "SELECT * FROM ksiazki WHERE gatunek='Inzynieria'";
+  $sql = "SELECT * FROM ksiazki WHERE gatunek='Inzynieria' ORDER BY `nazwiskoautora`";
   if ($rezultat = @$polaczenie->query($sql)){
       $ile_ksiazek = $rezultat->num_rows;
       if($ile_ksiazek>0) {

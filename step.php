@@ -9,16 +9,17 @@ $userMail = $_SESSION['user'];
 $prawieUser = explode("@",$userMail);
 $user = $prawieUser[0];
 $userFile = "orders/".$user.".json";
+$userFileLength = count(file($userFile));
 
 switch($_SESSION['step']){
     case 1:
-    if(file_exists($userFile)){
+    if(file_exists($userFile) && $userFileLength > 0){
         if(isset($_SESSION['bucket_response'])){
             unset($_SESSION['bucket_response']);
         };
-        for($i = 0; $i = $_SESSION['iloscIteracji']-4; $i++){
-            $_SESSION['produkty'];
-            $_SESSION['produkty'][$i] = $_POST[$i];
+        for($i = 0; $i = $_SESSION['iloscIteracji']-3; $i++){
+            $produkt.$i = $_POST[$i];
+            $_SESSION['produkty'][$i] = $produkt.$i;
         }
         $_SESSION['step']++;
         header('Location: koszyk.php');
