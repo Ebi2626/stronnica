@@ -1,0 +1,62 @@
+.mainHeader {
+    position: relative;
+    background-image: url("../src/img/archiwum-sm.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    background-color: rgba(30,30,30, .7);
+    background-blend-mode: overlay;
+    min-height: 600px;
+    padding-bottom: 150px;
+    .searchTitle {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        height: 100px;
+        width: 100vw;
+        top: 20px;
+        justify-content: center;
+        align-items: center;
+        &__text {
+            text-transform: uppercase;
+            text-align: center;
+
+        }
+    }
+    .authors {
+        position: relative;
+        display: flex;
+        top: 100px;
+        flex-direction: column;
+        min-width: 400px;
+        width: 80vw;
+        max-width: 800px;
+        align-items: center;
+        justify-content: flex-start;
+        color: white;
+        margin: 20px auto;
+        max-height: 500px;
+        overflow-x: none;
+        overflow-Y: auto;
+        &__title {
+            color: white;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        &__list{
+            list-style-type: disc;
+            .authors__item{
+            line-height: 25px;
+            font-size: 16px;
+            }
+        }
+}
+}
+@media all and (min-width: 768px){
+    .searchTitle{
+        position: fixed !important;
+        top: 150px !important;
+        left: 0px !important;
+    }
+}

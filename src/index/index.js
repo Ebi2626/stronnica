@@ -27,7 +27,7 @@ function addToBucketReady(){
         }
         console.log(autorKsiazki);
         console.log(tytulKsiazki);
-        this.parentNode.setAttribute("href", "http://localhost/stronnica/basketItem.php?autor="+pozycja.autor+"&tytul="+pozycja.tytul);
+        this.parentNode.setAttribute("href", "http://localhost/stronnica/shoppingCartItem.php?autor="+pozycja.autor+"&tytul="+pozycja.tytul);
         let pozycjaJSON = JSON.stringify(pozycja);
         let nowy = JSON.parse(pozycjaJSON);
     }
