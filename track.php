@@ -22,13 +22,13 @@ require("nav.php");
 ?>
 <h1 class="title">Śledź zamówienie</h1>
 <div class="track">
-<?php 
+<?php
     require("trackOrders.php");
     ?>
     <?php
     if(isset($_SESSION['orders'])){
         if ($_SESSION['orders'] == 0){
-            echo "<p class='no__orders'>Nie ma żadnych zrealizowanych zamówień</p>";
+            echo "<p class='no__orders'>Nie ma żadnych zamówień w trakcie realizacji</p>";
         }
     }
 ?>

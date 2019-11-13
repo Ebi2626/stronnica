@@ -7,19 +7,21 @@ $userFile = "orders/".$user.".json";
 $a = $_GET['autor'];
 $t = $_GET['tytul'];
 $i = $_GET['ilosc'];
+$_SESSION['ilosc_'.$t]--;
 class pozycja {
     public $autor;
     public $tytul;
     function pokaz(){
-        echo $this->autor;
-        echo $this->tytul;
+        echo $this->autor."<br/>";
+        echo $this->tytul."<br/>";
     }
 }
 $pozycja = new pozycja();
 $pozycja->autor = $a;
 $pozycja->tytul = $t;
+$pozycja->pokaz();
 $pozycjaJSON = json_encode($pozycja);
-//echo $pozycjaJSON;
+echo $pozycjaJSON."<br/>";
 // wczytanie starych danych
 // stworzenie nowych danych
 if(file_exists($userFile)){
@@ -55,12 +57,11 @@ if(file_exists($userFile)){
     }
     }
 }
-   echo $noweDane;
+   echo "<br><br>!!!".$noweDane;
    fclose($fp);
    $fp = fopen($userFile, "w");
    fwrite($fp, $noweDane);
    fclose($fp);
-   Header("Location:koszyk.php");
-
+   //Header("Location:shoppingCart.php");
 }
 ?>

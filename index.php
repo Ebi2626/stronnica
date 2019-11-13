@@ -79,7 +79,7 @@ echo substr($filename, 0, -4);
                     echo "<div class='content__items' id='content".$wiersz->idksiazki."' ><a class='sending'><div class='tooltip'>";
                     echo "<span class='tooltip__text'>Dodaj do koszyka</span></div></a>";
                     echo "<h4 class='content__bookAuthor' name='autor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
-                    echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
+                    echo "<img class='content__img' src='./src/covers/".$wiersz->Okladka."' />";
                     echo "<p class='content__bookTitle' name='tytul'>".$wiersz->tytul."</p>";
                     echo "</div>";
                     $i++;
@@ -134,7 +134,7 @@ else {
                 echo "<div class='content__items' id='content".$wiersz->idksiazki."' ><a class='sending'><div class='tooltip'>";
                 echo "<span class='tooltip__text'>Dodaj do koszyka</span></div></a>";
                 echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
-                echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
+                echo "<img class='content__img' src='./src/covers/".$wiersz->Okladka."' />";
                 echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
                 echo "</div>";
                 $i++;
@@ -190,7 +190,7 @@ else {
                 echo "<div class='content__items' id='content".$wiersz->idksiazki."' ><a class='sending'><div class='tooltip'>";
                 echo "<span class='tooltip__text'>Dodaj do koszyka</span></div></a>";
                 echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
-                echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
+                echo "<img class='content__img' src='./src/covers/".$wiersz->Okladka."' />";
                 echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
                 echo "</div>";
                 $i++;
@@ -245,7 +245,7 @@ else {
                 echo "<div class='content__items' id='content".$wiersz->idksiazki."' ><a class='sending'><div class='tooltip'>";
                 echo "<span class='tooltip__text'>Dodaj do koszyka</span></div></a>";
                 echo "<h4 class='content__bookAuthor'>".$wiersz->imieautora." ".$wiersz->nazwiskoautora."</h4>";
-                echo "<img class='content__img' src='./src/okladki/".$wiersz->Okladka."' />";
+                echo "<img class='content__img' src='./src/covers/".$wiersz->Okladka."' />";
                 echo "<p class='content__bookTitle'>".$wiersz->tytul."</p>";
                 echo "</div>";
                 $i++;

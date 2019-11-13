@@ -38,7 +38,7 @@ include("nav.php")
         echo $userName;
                 ?></h1>
         <div class="profile__item">
-            <p class="profile__label">Obecny avatar:</p><img id="userAvatar" src="./src/klienci/<?php
+            <p class="profile__label">Obecny avatar:</p><img id="userAvatar" src="./src/clients/<?php
             if(glob($user."_".$id.".*") > 0){
 
             require('avatar.php');

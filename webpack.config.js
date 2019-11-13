@@ -7,12 +7,12 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    autorzy: "./src/autorzy/autorzy.js",
-    kategorie: "./src/kategorie/kategorie.js",
-    ksiazki: "./src/ksiazki/ksiazki.js",
-    koszyk: "./src/koszyk/koszyk.js",
-    zaloguj: "./src/zaloguj/zaloguj.js",
-    zarejestruj: "./src/zarejestruj/zarejestruj.js",
+    authors: "./src/authors/authors.js",
+    cathegories: "./src/cathegories/cathegories.js",
+    books: "./src/books/books.js",
+    shoppingCart: "./src/shoppingCart/shoppingCart.js",
+    login: "./src/login/login.js",
+    register: "./src/register/register.js",
     main: "./src/main/main.js",
     user: "./src/user/user.js",
     index: "./src/index/index.js",

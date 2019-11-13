@@ -38,7 +38,7 @@ if (preg_match('/jpeg/', $typ)){
 } elseif (preg_match('/png/', $typ)){
 $rozszerzenie = ".png";
 }
-$lokalizacja = './src/klienci/'.$user.$rozszerzenie;
+$lokalizacja = './src/clients/'.$user.$rozszerzenie;
 
 $nowyAvatar = $user.$rozszerzenie;
 
@@ -80,7 +80,7 @@ if($polaczenie->connect_errno!=0) {
     } elseif (preg_match('/png/', $typ)){
     $rozszerzenie = ".png";
     }
-    $lokalizacja = './src/klienci/'.$user.$rozszerzenie;
+    $lokalizacja = './src/clients/'.$user.$rozszerzenie;
     $nowyAvatar = $user.$rozszerzenie;
 
 

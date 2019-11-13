@@ -7,7 +7,7 @@ if ((isset($_SESSION['user']))){
 
     if($polaczenie->connect_errno!=0) {
         echo "Error: ".$polaczenie->connect_errno;
-    } else { 
+    } else {
         $email = $_SESSION['user'];
         $email = htmlentities($email, ENT_QUOTES, "UTF-8");
         $polaczenie -> query("SET NAMES 'utf8'");
@@ -37,7 +37,7 @@ if ((isset($_SESSION['user']))){
                         echo "<th>Produkt</th>";
                         echo "<th>Cena</th>";
                         echo "</thead>";
-                        echo "<tbody>";                     
+                        echo "<tbody>";
                         while ($wiersz2 = $rezultat2->fetch_object()) {
                             $realI = $i2 + 1;
                             echo "<tr>";
@@ -61,7 +61,7 @@ if ((isset($_SESSION['user']))){
                                         }
                                         $rezultat3->close();
                                     }
-                                } 
+                                }
                             } else {
                                 echo 'Problem z połączeniem. Nie można znaleźć książki o podanym id.';
                             }
@@ -69,10 +69,12 @@ if ((isset($_SESSION['user']))){
                             if($i2 >= $ile_zamowien2){
                                 break;
                             }
-                        } 
+                        }
                         echo"</tbody></table>";
                         $rezultat2->close();
-                    } 
+                    } else {
+                        $_SESSION['orders'] = 0;
+                    }
                 } else {
                     echo 'Problem z połączeniem. Nie można znaleźć zamówienia dla obecnego użytkownika.';
                 }

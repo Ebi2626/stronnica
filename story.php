@@ -22,14 +22,12 @@ require("nav.php");
 ?>
 <h1 class="title">Historia zamówień</h1>
 <div class="story">
-<?php 
+<?php
     require("storyOrders.php");
     ?>
     <?php
     if(isset($_SESSION['orders'])){
-        if ($_SESSION['orders'] == 0){
             echo "<p class='no__orders'>Nie ma żadnych zrealizowanych zamówień</p>";
-        }
     }
 ?>
 </div>
