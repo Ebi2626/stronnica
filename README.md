@@ -1,6 +1,7 @@
 Stronnica online bookstore
 =============================
 It is a online bookstore with whole backend and database. 
+Frontend demo: https://ebi2626.github.io/stronnica/
 
 About website possibilities
 -------------------------------
