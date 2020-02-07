@@ -6,7 +6,7 @@ About website possibilities
 -------------------------------
 - Making orders for books
 - Adding/deleting positions to the shopping cart
-- Making account (register)
+- Making account (registration)
 - Loggin in
 - Setting up a profile picture
 - Editing data in a profile
